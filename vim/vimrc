@@ -23,10 +23,39 @@ Plug 'vim-scripts/django.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': ['html', 'jinja'] }
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/django-plus.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install'}
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = [
+            \ 'coc-tsserver',
+            \ 'coc-python'
+            \ ]
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+    let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+    let g:coc_global_extensions += ['coc-eslint']
+endif
+
+function! ShowDocIfNoDiagnostic(timer_id)
+    if (coc#util#has_float() == 0)
+        silent call CocActionAsync('doHover')
+    endif
+endfunction
+
+function! s:show_hover_doc()
+    call timer_start(500, 'ShowDocIfNoDiagnostic')
+endfunction
+
+autocmd CursorHoldI * :call <SID>show_hover_doc()
+autocmd CursorHold * :call <SID>show_hover_doc()
 
 "{{ TMux - Vim integration
 
@@ -35,15 +64,15 @@ autocmd! User tmuxline.vim
             \ let g:tmuxline_powerline_separators = 0 |
             \ let g:tmuxline_theme = 'lightline' |
             \ let g:tmuxline_preset = {
-                \ 'a':       '#S',
-                \ 'b':       '#W',
-                \ 'c':       '%R',
-                \ 'win':     '#I #W',
-                \ 'cwin':    '#I #W',
-                \ 'x':       '',
-                \ 'y':       '',
-                \ 'z':       '',
-                \ 'options': { 'status-justify': 'right' }
+            \ 'a':       '#S',
+            \ 'b':       '#W',
+            \ 'c':       '%R',
+            \ 'win':     '#I #W',
+            \ 'cwin':    '#I #W',
+            \ 'x':       '',
+            \ 'y':       '',
+            \ 'z':       '',
+            \ 'options': { 'status-justify': 'right' }
             \ }}
 " let g:tmuxline_theme = 'lightline'
 " Plug 'christoomey/vim-tmux-navigator'
@@ -109,8 +138,8 @@ set smartindent
 set ignorecase smartcase
 set hlsearch incsearch
 
- " path to directory where library can be found
- let g:clang_library_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+" path to directory where library can be found
+let g:clang_library_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 
 """""""""" DISPLAY """"""""""
 
@@ -126,7 +155,7 @@ if exists('+termguicolors')
     set termguicolors
 endif
 
-set background=dark
+set background=light
 
 " let g:airline_theme='gruvbox'
 set noshowmode " stop insert/normal prompt with lightline
@@ -143,6 +172,7 @@ let g:lightline = {
             \ }
 
 let g:gruvbox_contrast_dark="soft"
+let g:gruvbox_contrast_light="soft"
 colorscheme gruvbox
 
 " colorscheme spacegray
@@ -230,7 +260,8 @@ nnoremap <leader>mainp :-1read $HOME/.vim/snippets/main_skeleton.py<CR>o
 " Open vimrc from any buffer
 " source changes when save and close
 nnoremap <leader>vrc :tabe ~/dotfiles/vim/vimrc<cr>
-autocmd bufwritepost .vimrc source $MYVIMRC
+autocmd bufwritepost ~/dotfiles/vim/vimrc source $MYVIMRC
+
 """"""""""" SPLITS """""""""""
 
 " nnoremap <leader>j <C-W><C-J>
@@ -251,9 +282,9 @@ set splitright
 set number relativenumber
 
 augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
 " keep cursor in middle of screen 
@@ -282,7 +313,7 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 " Notification after file change
 " https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
 autocmd FileChangedShellPost *
-  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+            \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 set cc=80
 """""""""""""""""""""""" MACROS """""""""""""""""""""""""""""
@@ -293,6 +324,6 @@ set cc=80
 
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 function! ExecuteMacroOverVisualRange()
-  echo "@".getcmdline()
-  execute ":'<,'>normal @".nr2char(getchar())
+    echo "@".getcmdline()
+    execute ":'<,'>normal @".nr2char(getchar())
 endfunction
