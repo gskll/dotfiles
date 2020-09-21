@@ -19,11 +19,14 @@ Plug 'romainl/vim-cool'
 Plug 'Townk/vim-autoclose'
 Plug 'xavierd/clang_complete'
 Plug 'tpope/vim-surround'
+Plug 'vim-scripts/django.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': ['html', 'jinja'] }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'tweekmonster/django-plus.vim'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install'}
 
 "{{ TMux - Vim integration
 
@@ -181,14 +184,17 @@ vnoremap <leader>P "+P
 
 set backspace=2
 
+nmap <leader>q <Plug>(Prettier)
+
 " Remap save, save+quit
 inoremap <C-W> <Esc>:w!<Cr>
-nnoremap <C-W> :w!<Cr>
+" nnoremap <C-W> :w!<Cr>
 nnoremap zz :w!<Cr>
+nnoremap ZZ :wq<Cr>
 
 
-autocmd FileType jinja.html let b:surround_100 = "{% \r %}"
-autocmd FileType jinja.html let b:surround_68 = "{{ \r }}"
+autocmd FileType html let b:surround_100 = "{% \r %}"
+autocmd FileType html let b:surround_68 = "{{ \r }}"
 
 
 """""""""" FINDING FILES """"""""""
@@ -198,7 +204,7 @@ set wildmenu " display all matching files with tab complete
 " Netrw file navigation
 " :edit folder to open file browser
 " <CR>/o/v/t to open file in window/sp/vs/tab
-let g:netrw_liststyle = 3 " tree view
+" let g:netrw_liststyle = 3 " tree view
 let g:netrw_banner = 0 " remove the top banner
 " let g:netrw_browse_split = 4 " Allows files to open in different tabs/windows --->
 " 1 -> new horizontal split
@@ -223,7 +229,7 @@ nnoremap <leader>mainp :-1read $HOME/.vim/snippets/main_skeleton.py<CR>o
 
 " Open vimrc from any buffer
 " source changes when save and close
-nnoremap <leader>vrc :tabe ~/.vim/.vimrc<cr>
+nnoremap <leader>vrc :tabe ~/dotfiles/vim/vimrc<cr>
 autocmd bufwritepost .vimrc source $MYVIMRC
 """"""""""" SPLITS """""""""""
 

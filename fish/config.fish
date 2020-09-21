@@ -20,6 +20,7 @@ alias ,,="cd -"
 alias ch="cd ~"
 alias rm="trash"
 
+alias ydl="youtube-dl"
 alias fix_brew="sudo chown -R (whoami) /usr/local"
 
 #Git aliases
@@ -35,6 +36,17 @@ alias gpl="git pull"
 alias go="git checkout"
 alias gb="git branch"
 alias gbo="git checkout -b"
+alias gd="git diff"
+
+
+# Alias to restore tmux after reboot with 
+# just saved session
+# https://tech.serhatteker.com/post/2019-11/restore-tmux-after-reboot/
+alias mux="pgrep -vx tmux > /dev/null && \
+        tmux new -d -s delete-me && \
+        tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh && \
+        tmux kill-session -t delete-me && \
+        tmux attach || tmux attach"
 
 # Source config.fish
 alias sfc="source ~/.config/fish/config.fish"
@@ -88,3 +100,9 @@ set -gx PKG_CONFIG_PATH "/usr/local/opt/openblas/lib/pkgconfig"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/andrew/cs/data-science/fast-ai/cs/google-cloud-sdk/path.fish.inc' ]; . '/Users/andrew/cs/data-science/fast-ai/cs/google-cloud-sdk/path.fish.inc'; end
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /Users/andrew/.pyenv/versions/miniconda3-latest/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
