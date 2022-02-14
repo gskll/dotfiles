@@ -38,6 +38,7 @@ alias gb="git branch"
 alias gbo="git checkout -b"
 alias gd="git diff"
 
+alias brew="env PATH=(string replace (pyenv root)/shims '' \"\$PATH\") brew"
 
 # Alias to restore tmux after reboot with 
 # just saved session
@@ -86,6 +87,8 @@ source (goenv init - | psub)
 starship init fish | source
 
 export PATH="$HOME/.rbenv/bin:$PATH"
+status is-login; and pyenv init --path | source
+status is-interactive; and pyenv init - | source
 
 export EDITOR="vim"
 
@@ -103,6 +106,6 @@ if [ -f '/Users/andrew/cs/data-science/fast-ai/cs/google-cloud-sdk/path.fish.inc
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval /Users/andrew/.pyenv/versions/miniconda3-latest/bin/conda "shell.fish" "hook" $argv | source
+# eval /Users/andrew/.pyenv/versions/miniconda3-latest/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
