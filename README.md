@@ -38,4 +38,4 @@ set font to MesloLGSDZ Nerd Font Mono - size 16
 
 ## Tmux
 
-`echo n -s "source ~/dotfiles/tmux/tmux.conf " > ~/.tmux.conf`
+`echo ln -s "source ~/dotfiles/tmux/tmux.conf " > ~/.tmux.conf`

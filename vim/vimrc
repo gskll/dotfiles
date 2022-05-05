@@ -33,7 +33,8 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = [
             \ 'coc-tsserver',
-            \ 'coc-python'
+            \ 'coc-python',
+            \ 'coc-json'
             \ ]
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
@@ -44,11 +45,11 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
     let g:coc_global_extensions += ['coc-eslint']
 endif
 
-function! ShowDocIfNoDiagnostic(timer_id)
-    if (coc#util#has_float() == 0)
-        silent call CocActionAsync('doHover')
-    endif
-endfunction
+" function! ShowDocIfNoDiagnostic(timer_id)
+"     if (coc#util#has_float() == 0)
+"         silent call CocActionAsync('doHover')
+"     endif
+" endfunction
 
 function! s:show_hover_doc()
     call timer_start(500, 'ShowDocIfNoDiagnostic')

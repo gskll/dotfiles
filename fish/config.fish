@@ -31,11 +31,12 @@ alias gc="git commit"
 alias gs="git status"
 alias gll="git log"
 alias gl="git log --oneline"
+alias glf="git log --oneline -n 5"
 alias gp="git push"
 alias gpl="git pull"
-alias go="git checkout"
+alias gco="git checkout"
 alias gb="git branch"
-alias gbo="git checkout -b"
+alias gcob="git checkout -b"
 alias gd="git diff"
 
 alias brew="env PATH=(string replace (pyenv root)/shims '' \"\$PATH\") brew"
@@ -101,11 +102,6 @@ set -gx LDFLAGS "-L/usr/local/opt/openblas/lib"
 set -gx CPPFLAGS "-I/usr/local/opt/openblas/include"
 set -gx PKG_CONFIG_PATH "/usr/local/opt/openblas/lib/pkgconfig"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/andrew/cs/data-science/fast-ai/cs/google-cloud-sdk/path.fish.inc' ]; . '/Users/andrew/cs/data-science/fast-ai/cs/google-cloud-sdk/path.fish.inc'; end
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# eval /Users/andrew/.pyenv/versions/miniconda3-latest/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
-
+set -gx GOOGLE_APPLICATION_CREDENTIALS "/Users/andrew.gaskell/google_application_credentials_ML_test.json"
