@@ -1,4 +1,5 @@
-set -g -x PATH /usr/local/bin $PATH
+set -g -x PATH /opt/homebrew/bin /usr/local/bin $PATH
+# set -g -x PATH /opt/homebrew/bin /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin $PATH
 
 # Show/hide . files
 
@@ -23,6 +24,8 @@ alias rm="trash"
 alias ydl="youtube-dl"
 alias fix_brew="sudo chown -R (whoami) /usr/local"
 
+#alias gowsumeToolsRW="export $(/Applications/gowsumed.app/Contents/MacOS/gowsume use tools:sp-admin-rw)"
+
 #Git aliases
 alias gA="git add -A"
 alias ga="git add"
@@ -38,8 +41,12 @@ alias gco="git checkout"
 alias gb="git branch"
 alias gcob="git checkout -b"
 alias gd="git diff"
+alias sw="git switch"
 
 alias brew="env PATH=(string replace (pyenv root)/shims '' \"\$PATH\") brew"
+
+alias gcc="gcc-11"
+alias g++="g++-11"
 
 # Alias to restore tmux after reboot with 
 # just saved session
@@ -105,3 +112,4 @@ set -gx PKG_CONFIG_PATH "/usr/local/opt/openblas/lib/pkgconfig"
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
 set -gx GOOGLE_APPLICATION_CREDENTIALS "/Users/andrew.gaskell/google_application_credentials_ML_test.json"
+

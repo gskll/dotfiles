@@ -30,33 +30,17 @@ Plug 'Glench/Vim-Jinja2-Syntax', { 'for': ['html', 'jinja'] }
 Plug 'tweekmonster/django-plus.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install'}
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = [
-            \ 'coc-tsserver',
-            \ 'coc-python',
-            \ 'coc-json'
-            \ ]
-
-if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-    let g:coc_global_extensions += ['coc-prettier']
-endif
-
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-    let g:coc_global_extensions += ['coc-eslint']
-endif
-
-" function! ShowDocIfNoDiagnostic(timer_id)
-"     if (coc#util#has_float() == 0)
-"         silent call CocActionAsync('doHover')
-"     endif
-" endfunction
-
-function! s:show_hover_doc()
-    call timer_start(500, 'ShowDocIfNoDiagnostic')
-endfunction
-
-autocmd CursorHoldI * :call <SID>show_hover_doc()
-autocmd CursorHold * :call <SID>show_hover_doc()
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
 
 "{{ TMux - Vim integration
 
@@ -195,7 +179,7 @@ inoremap <right> <nop>
 
 inoremap jk <ESC> " remap escape key to jk roll
 
-let mapleader = ","
+let g:mapleader = ","
 let g:user_emmet_leader_key="\<leader>"
 
 " " Copy to clipboard
