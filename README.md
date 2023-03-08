@@ -47,13 +47,12 @@ set font to MesloLGSDZ Nerd Font Mono - size 16
 4. Install node version - `nvm install lts`
 5. `set --universal nvm_default_version ` + version
 
-## Vim
+## Vim (neovim)
 
-`ln -s ~/dotfiles/vim/ ~/`
+`ln -s ~/dotfiles/nvim/ ~/.config`
 
-1. Rename folder to `.vim`
-2. Install vim-plug
-3. PlugInstall
+1. Install packer
+1. Run `PackerSync` in `packer.lua`
 
 ## Tmux
 
