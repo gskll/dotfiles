@@ -22,6 +22,7 @@ keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Keep cursor centred on screen up" 
 -- file search
 keymap.set("n", "n", "nzzzv", { desc = "Keep cursor centred on next search match" })
 keymap.set("n", "N", "Nzzzv", { desc = "Keep cursor centred on prev search match" })
+keymap.set("n", "<leader>/", ":noh<CR>", {desc = "Clear search highlighting"})
 
 -- clipboard copy
 keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to system clipboard" })
@@ -38,6 +39,10 @@ keymap.set({ "n", "v" }, "<leader>d", "\"_d", { desc = "Delete to void register"
 keymap.set({ "n", "v" }, "x", "\"_x", { desc = "Delete single char to void register" })
 
 -- window management
+keymap.set("n", "<C-h>", "<C-w><C-h>", {desc = "Move to cursor left a window"})
+keymap.set("n", "<C-j>", "<C-w><C-j>", {desc = "Move to cursor down a window"})
+keymap.set("n", "<C-k>", "<C-w><C-k>", {desc = "Move to up a window"})
+keymap.set("n", "<C-l>", "<C-w><C-l>", {desc = "Move to right a window"})
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width & height" })
