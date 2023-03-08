@@ -1,7 +1,8 @@
 # Dotfiles
 
+1. `xcode-select --install`
 1. install homebrew
-   `brew install vim tmux gcc fish ctags gpg r rbenv pyenv goenv pandoc ruby sqlite starship tree zlib wget trash`
+   `brew install neovim tmux gcc fish ctags gpg r rbenv pyenv goenv pandoc ruby sqlite starship tree zlib wget trash ripgrep`
 
    `brew install --cask insomnia mongodb-compass firefox iterm2 flux google-chrome alfred rectangle 1password nordvpn notion vlc spotify visual-studio-code figma docker caffeine dash kap loom whatsapp zoom the-unarchiver`
 
@@ -9,13 +10,20 @@
    `brew install --cask font-meslo-lg-nerd-font font-sauce-code-pro-nerd-font`
 
 1. Setup 1password
-2. install alfred3 from chrome - license key in 1password - https://cachefly.alfredapp.com/Alfred_3.8.6_972.dmg
-3. install dash5 from chrome - license key in 1password - https://frankfurt.kapeli.com/downloads/v5/Dash.zip
-4. install chrome plugins
-    - 1password
-    - react / redux / angular devtools
-    - JSONVue
-    - Loom
+1. install alfred3 from chrome - license key in 1password - https://cachefly.alfredapp.com/Alfred_3.8.6_972.dmg
+1. install dash5 from chrome - license key in 1password - https://frankfurt.kapeli.com/downloads/v5/Dash.zip
+1. install chrome plugins
+   - 1password
+   - react / redux / angular devtools
+   - JSONVue
+   - Loom
+
+## Apple defaults
+
+```
+mkdir ~/Documents/screenshots && defaults write com.apple.screencapture location ~/Documents/screenshots
+
+```
 
 ## iTerm
 
@@ -49,8 +57,6 @@ set font to MesloLGSDZ Nerd Font Mono - size 16
 
 ## Tmux
 
-
 1. `ln -s ~/dotfiles/tmux/tmux.conf  ~/.tmux.conf`
 2. `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 3. Enter tmux and hit `prefix + I` (`ctrl+a + I`) to install plugins
-

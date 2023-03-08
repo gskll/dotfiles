@@ -45,17 +45,8 @@ alias sw="git switch"
 
 alias brew="env PATH=(string replace (pyenv root)/shims '' \"\$PATH\") brew"
 
-alias gcc="gcc-11"
-alias g++="g++-11"
-
-# Alias to restore tmux after reboot with 
-# just saved session
-# https://tech.serhatteker.com/post/2019-11/restore-tmux-after-reboot/
-alias mux="pgrep -vx tmux > /dev/null && \
-        tmux new -d -s delete-me && \
-        tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh && \
-        tmux kill-session -t delete-me && \
-        tmux attach || tmux attach"
+alias vi="nvim"
+alias vim="nvim"
 
 # Source config.fish
 alias sfc="source ~/.config/fish/config.fish"
@@ -98,7 +89,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 status is-login; and pyenv init --path | source
 status is-interactive; and pyenv init - | source
 
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # CS50 C compile settings
 export CC="gcc"
