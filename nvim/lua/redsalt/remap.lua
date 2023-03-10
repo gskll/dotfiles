@@ -1,8 +1,8 @@
 local keymap = vim.keymap
 
 keymap.set("i", "jk", "<Esc>", { desc = "Escape insert mode" })
-keymap.set("n", "E", "$", { desc = "Remap line end" })
-keymap.set("n", "B", "^", { desc = "Remap line start" })
+keymap.set({"n","v"}, "E", "$", { desc = "Remap line end" })
+keymap.set({"n","v"}, "B", "^", { desc = "Remap line start" })
 
 -- file saving
 keymap.set("n", "zz", vim.cmd.update, { desc = "Update from NORMAL", noremap = true })
