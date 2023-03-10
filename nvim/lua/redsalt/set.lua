@@ -1,4 +1,5 @@
 local opt = vim.opt
+local api = vim.api
 
 vim.g.mapleader = " "
 
@@ -43,3 +44,25 @@ opt.updatetime = 50
 
 opt.colorcolumn = "80"
 
+opt.foldmethod = "indent"
+opt.foldlevel = 1
+opt.foldenable = false -- open folds by default
+
+-- save/restore folds automatically
+-- https://vi.stackexchange.com/questions/13864/bufwinleave-mkview-with-unnamed-file-error-32
+local foldGrp = api.nvim_create_augroup("Folding", { clear = true })
+api.nvim_create_autocmd({"BufWinLeave", "BufLeave", "BufWritePost", "BufHidden", "QuitPre"}, {
+  pattern = "?* nested",
+  command = "silent! mkview",
+  group = foldGrp
+})
+api.nvim_create_autocmd("BufWinEnter", {
+  pattern = "?*",
+  command = "silent! loadview",
+  group = foldGrp
+})
+api.nvim_create_autocmd("BufRead", {
+  pattern = "?*",
+  command = "normal zR",
+  group = foldGrp
+})
