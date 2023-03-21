@@ -83,4 +83,6 @@ return require("packer").startup(function(use)
 	use("szw/vim-maximizer") -- maximizes and restores current window
 
 	use("laytan/cloak.nvim") -- hide sensitive information
+
+	use("github/copilot.vim")
 end)
