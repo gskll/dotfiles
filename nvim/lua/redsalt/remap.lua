@@ -1,8 +1,8 @@
 local keymap = vim.keymap
 
 keymap.set("i", "jk", "<Esc>", { desc = "Escape insert mode" })
-keymap.set({"n","v"}, "E", "$", { desc = "Remap line end" })
-keymap.set({"n","v"}, "B", "^", { desc = "Remap line start" })
+keymap.set({ "n", "v" }, "E", "$", { desc = "Remap line end" })
+keymap.set({ "n", "v" }, "B", "^", { desc = "Remap line start" })
 
 -- file saving
 keymap.set("n", "zz", vim.cmd.update, { desc = "Update from NORMAL", noremap = true })
@@ -14,8 +14,8 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line selection up" })
 keymap.set("n", "J", "mzJ`z", { desc = "Append next line keeping same cursor position" })
 
 -- move screen
-keymap.set("n", "j", "jzz", { desc = "Keep cursor centred on line down", noremap = true })
-keymap.set("n", "k", "kzz", { desc = "Keep cursor centred on line up", noremap = true })
+keymap.set("n", "j", "v:count == 0 ? 'gjzz' : 'jzz'", { expr = true, silent = true })
+keymap.set("n", "k", "v:count == 0 ? 'gkzz' : 'kzz'", { expr = true, silent = true })
 keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Keep cursor centred on screen down", noremap = true })
 keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Keep cursor centred on screen up", noremap = true })
 
