@@ -78,10 +78,11 @@ keymap.set("n", "<leader>fml", ":CellularAutomaton make_it_rain<CR>", { desc = "
 
 keymap.set("n", "<leader>vpp", ":e ~/dotfiles/nvim/lua/redsalt/packer.lua<CR>", { desc = "Source neovim config" })
 
-keymap.set("n", "<leader>o", vim.cmd.copen, { desc = "Quickfix list open" })
-keymap.set("n", "<leader>j", ":cnext<CR>zz", { desc = "Quickfix list next item", noremap = true })
-keymap.set("n", "<leader>k", ":cprev<CR>zz", { desc = "Quickfix list prev item", noremap = true })
+-- ]q/[q to navigate quickfix - set in trouble.lua
+keymap.set("n", "<leader>co", vim.cmd.copen, { desc = "Quickfix list open" })
+keymap.set("n", "<leader>ck", ":cprev<CR>zz", { desc = "Quickfix list prev item", noremap = true })
 
-keymap.set("n", "<leader>lo", vim.cmd.lopen, { desc = "Location list open" })
-keymap.set("n", "<leader>lk", ":lnext<CR>zz", { desc = "Location list next item", noremap = true })
-keymap.set("n", "<leader>lj", ":lprev<CR>zz", { desc = "Location list prev item", noremap = true })
+keymap.set("n", "<leader>lo", ":lopen<CR>", { desc = "Location list open" })
+keymap.set("n", "<leader>lc", vim.cmd.lclose, { desc = "Location list close" })
+keymap.set("n", "<leader>lj", ":lnext<CR>zz", { desc = "Location list next item", noremap = true })
+keymap.set("n", "<leader>lk", ":lprev<CR>zz", { desc = "Location list prev item", noremap = true })
