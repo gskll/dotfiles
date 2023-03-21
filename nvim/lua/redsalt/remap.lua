@@ -49,6 +49,11 @@ keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width
 keymap.set("n", "<leader>sx", vim.cmd.close, { desc = "Close current split window" })
 keymap.set("n", "<tab>", "<C-w><C-w>", { desc = "Go to next split window" })
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle split window maximization" })
+-- Resize window using <ctrl> arrow keys
+keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- tab management
 keymap.set("n", "<leader>to", vim.cmd.tabnew, { desc = "Open new tab" })
