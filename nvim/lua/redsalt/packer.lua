@@ -80,6 +80,14 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup()
+		end,
+	})
+
 	use("szw/vim-maximizer") -- maximizes and restores current window
 
 	use("laytan/cloak.nvim") -- hide sensitive information
