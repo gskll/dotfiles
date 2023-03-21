@@ -89,4 +89,20 @@ vim.diagnostic.config({
 	virtual_text = true,
 })
 
+-- toggle LSP diagnostics
+-- https://www.reddit.com/r/neovim/comments/uri2p4/here_is_a_quick_code_snippet_to_toggle_lsp/
+local diagnostics_active = true
+vim.keymap.set("n", "<leader>vd", function()
+	diagnostics_active = not diagnostics_active
+	if diagnostics_active then
+		vim.diagnostic.show()
+	else
+		vim.diagnostic.hide()
+	end
+end)
 
+vim.api.nvim_create_autocmd("DiagnosticChanged", {
+	callback = function()
+		vim.diagnostic.setloclist({ open = false })
+	end,
+})
