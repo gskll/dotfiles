@@ -1,6 +1,12 @@
 local builtin = require("telescope.builtin")
 local map = vim.keymap
 
+require("telescope").setup({
+	defaults = {
+		path_display = { truncate = 3 },
+	},
+})
+
 -- files
 map.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find_files" })
 map.set("n", "<C-p>", builtin.git_files, { desc = "Telescope git_files" })
