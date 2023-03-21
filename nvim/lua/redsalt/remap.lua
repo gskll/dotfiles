@@ -25,18 +25,18 @@ keymap.set("n", "N", "Nzzzv", { desc = "Keep cursor centred on prev search match
 keymap.set("n", "<leader>/", ":noh<CR>", { desc = "Clear search highlighting" })
 
 -- clipboard copy
-keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to system clipboard" })
-keymap.set("n", "<leader>yy", "\"+yy", { desc = "Yank line to system clipboard" })
+keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+keymap.set("n", "<leader>yy", '"+yy', { desc = "Yank line to system clipboard" })
 keymap.set("n", "<leader>Y", ":%y+<CR>", { desc = "Yank buffer to system clipboard" })
 
 -- clipboard paste
-keymap.set("n", "<leader>p", "\"+p", { desc = "Put/paste after cursor from system clipboard" })
-keymap.set("n", "<leader>P", "\"+P", { desc = "Put/paste before cursor from system clipboard" })
-keymap.set("v", "<leader>p", "\"_dP", { desc = "Replace selection with register without overwriting register" })
+keymap.set("n", "<leader>p", '"+p', { desc = "Put/paste after cursor from system clipboard" })
+keymap.set("n", "<leader>P", '"+P', { desc = "Put/paste before cursor from system clipboard" })
+keymap.set("v", "<leader>p", '"_dP', { desc = "Replace selection with register without overwriting register" })
 
 -- text deletion
-keymap.set({ "n", "v" }, "<leader>d", "\"_d", { desc = "Delete to void register" })
-keymap.set({ "n", "v" }, "x", "\"_x", { desc = "Delete single char to void register" })
+keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete to void register" })
+keymap.set({ "n", "v" }, "x", '"_x', { desc = "Delete single char to void register" })
 
 -- window management
 keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move to cursor left a window" })
