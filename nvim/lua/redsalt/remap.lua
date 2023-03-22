@@ -80,7 +80,7 @@ keymap.set("n", "<leader>vpp", ":e ~/dotfiles/nvim/lua/redsalt/packer.lua<CR>", 
 
 -- ]q/[q to navigate quickfix - set in trouble.lua
 keymap.set("n", "<leader>co", vim.cmd.copen, { desc = "Quickfix list open" })
-keymap.set("n", "<leader>ck", ":cprev<CR>zz", { desc = "Quickfix list prev item", noremap = true })
+keymap.set("n", "<leader>cc", vim.cmd.cclose, { desc = "Quickfix list close" })
 
 keymap.set("n", "<leader>lo", ":lopen<CR>", { desc = "Location list open" })
 keymap.set("n", "<leader>lc", vim.cmd.lclose, { desc = "Location list close" })
