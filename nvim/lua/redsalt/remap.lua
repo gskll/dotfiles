@@ -47,7 +47,6 @@ keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width & height" })
 keymap.set("n", "<leader>sx", vim.cmd.close, { desc = "Close current split window" })
-keymap.set("n", "<tab>", "<C-w><C-w>", { desc = "Go to next split window" })
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle split window maximization" })
 -- Resize window using <ctrl> arrow keys
 keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
