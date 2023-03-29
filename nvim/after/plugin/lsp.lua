@@ -44,7 +44,7 @@ lsp.set_preferences({
 	},
 })
 
-lsp.on_attach(function(client, bufnr)
+local on_attach = function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
 	vim.keymap.set("n", "gd", function()
@@ -81,9 +81,18 @@ lsp.on_attach(function(client, bufnr)
 		vim.keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports
 		vim.keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables
 	end
-end)
+end
 
+lsp.on_attach(on_attach)
+
+lsp.skip_server_setup({ "tsserver" })
 lsp.setup()
+
+require("typescript").setup({
+	server = {
+		on_attach = on_attach,
+	},
+})
 
 vim.diagnostic.config({
 	virtual_text = true,
