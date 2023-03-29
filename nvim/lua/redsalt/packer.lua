@@ -93,4 +93,13 @@ return require("packer").startup(function(use)
 	use("laytan/cloak.nvim") -- hide sensitive information
 
 	use("github/copilot.vim")
+
+	use({
+		"folke/persistence.nvim",
+		event = "BufReadPre",
+		module = "persistence",
+		config = function()
+			require("persistence").setup()
+		end,
+	})
 end)
