@@ -1,9 +1,22 @@
 local builtin = require("telescope.builtin")
+local actions = require("telescope.actions")
 local map = vim.keymap
 
 require("telescope").setup({
 	defaults = {
 		path_display = { truncate = 3 },
+	},
+	pickers = {
+		buffers = {
+			mappings = {
+				i = {
+					["<c-d>"] = actions.delete_buffer,
+				},
+				n = {
+					["<c-d>"] = actions.delete_buffer,
+				},
+			},
+		},
 	},
 })
 
