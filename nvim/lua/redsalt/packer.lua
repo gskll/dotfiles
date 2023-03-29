@@ -103,4 +103,21 @@ return require("packer").startup(function(use)
 			require("persistence").setup()
 		end,
 	})
+
+	use({
+		"jackMort/ChatGPT.nvim",
+		config = function()
+			require("chatgpt").setup({
+				keymaps = {
+					submit = "<C-s>",
+					close = { "<C-c>", "<Esc>" },
+				},
+			})
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
 end)
