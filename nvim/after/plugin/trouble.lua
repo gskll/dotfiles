@@ -20,7 +20,7 @@ set(
 set(
 	{ "n", "v" },
 	"<leader>xL",
-	"<cmd>TroubleToggle document_diagnostics<cr>",
+	"<cmd>TroubleToggle quickfix<cr>",
 	{ silent = true, noremap = true, desc = "Quickfix List (Trouble)" }
 )
 
