@@ -24,14 +24,14 @@ set(
 	{ silent = true, noremap = true, desc = "Quickfix List (Trouble)" }
 )
 
-set({ "n", "v" }, "[q", function()
+set({ "n", "v" }, "]q", function()
 	if require("trouble").is_open() then
 		require("trouble").previous({ skip_groups = true, jump = true })
 	else
 		vim.cmd.cprev()
 	end
 end, { silent = true, noremap = true, desc = "Previous trouble/quickfix item" })
-set({ "n", "v" }, "]q", function()
+set({ "n", "v" }, "[q", function()
 	if require("trouble").is_open() then
 		require("trouble").next({ skip_groups = true, jump = true })
 	else
