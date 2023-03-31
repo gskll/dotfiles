@@ -62,9 +62,6 @@ keymap.set("n", "<leader>tp", vim.cmd.tabp, { desc = "Go to previous tab" })
 
 keymap.set("n", "<leader><leader>", vim.cmd.source, { desc = "Source current file" })
 keymap.set("n", "Q", "<nop>", { desc = "Disable uppercase Q" })
-keymap.set("n", "<leader>f", function()
-	vim.lsp.buf.format()
-end, { desc = "Format file" })
 
 -- Misc
 keymap.set(

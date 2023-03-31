@@ -1,4 +1,5 @@
 local lsp = require("lsp-zero")
+local lspconfig = require("lspconfig")
 
 lsp.preset("recommended")
 
@@ -16,6 +17,12 @@ lsp.configure("lua_ls", {
 			},
 		},
 	},
+})
+
+lspconfig.angularls.setup({
+	on_attach = function(client)
+		client.server_capabilities.renameProvider = false
+	end,
 })
 
 local cmp = require("cmp")
@@ -60,8 +67,10 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
 	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
-	vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
-	vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
+	vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+
+	vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
 
 	-- typescript specific keymaps (e.g. rename file and update imports)
 	if client.name == "tsserver" then
