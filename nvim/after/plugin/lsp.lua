@@ -78,6 +78,23 @@ local on_attach = function(client, bufnr)
 		vim.keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports
 		vim.keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables
 	end
+
+	-- show line diagnostics automatically in hover window
+	-- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#show-line-diagnostics-automatically-in-hover-window
+	vim.api.nvim_create_autocmd("CursorHold", {
+		buffer = bufnr,
+		callback = function()
+			local cursorHoldOpts = {
+				focusable = false,
+				close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+				border = "rounded",
+				source = "always",
+				prefix = " ",
+				scope = "cursor",
+			}
+			vim.diagnostic.open_float(nil, cursorHoldOpts)
+		end,
+	})
 end
 
 lsp.on_attach(on_attach)
@@ -92,20 +109,8 @@ require("typescript").setup({
 })
 
 vim.diagnostic.config({
-	virtual_text = true,
+	virtual_text = false,
 })
-
--- toggle LSP diagnostics
--- https://www.reddit.com/r/neovim/comments/uri2p4/here_is_a_quick_code_snippet_to_toggle_lsp/
-local diagnostics_active = true
-vim.keymap.set("n", "<leader>vd", function()
-	diagnostics_active = not diagnostics_active
-	if diagnostics_active then
-		vim.diagnostic.show()
-	else
-		vim.diagnostic.hide()
-	end
-end)
 
 vim.api.nvim_create_autocmd("DiagnosticChanged", {
 	callback = function()
