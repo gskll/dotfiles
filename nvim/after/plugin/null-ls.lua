@@ -10,6 +10,7 @@ require("mason-null-ls").setup({
 	},
 	automatic_installation = false,
 	automatic_setup = true,
+  handlers = {}
 })
 require("null-ls").setup({
 	-- configure format on save
@@ -33,4 +34,3 @@ require("null-ls").setup({
 	end,
 })
 
-require("mason-null-ls").setup_handlers()
