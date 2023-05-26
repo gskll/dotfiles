@@ -73,6 +73,14 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- debugging
+	use("mfussenegger/nvim-dap")
+	use({
+		"leoluz/nvim-dap-go",
+		requires = { "mfussenegger/nvim-dap" },
+	})
+	use({ "jay-babu/mason-nvim-dap.nvim" })
+
 	use({
 		"folke/trouble.nvim",
 		requires = "nvim-tree/nvim-web-devicons",
@@ -101,6 +109,17 @@ return require("packer").startup(function(use)
 		module = "persistence",
 		config = function()
 			require("persistence").setup()
+		end,
+	})
+
+	use({
+		"olexsmir/gopher.nvim",
+		requires = { -- dependencies
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		config = function()
+			require("gopher").setup()
 		end,
 	})
 

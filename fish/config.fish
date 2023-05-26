@@ -1,6 +1,3 @@
-set -g -x PATH /opt/homebrew/bin /usr/local/bin $PATH
-# set -g -x PATH /opt/homebrew/bin /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin $PATH
-
 # Show/hide . files
 
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
@@ -43,7 +40,7 @@ alias gcob="git checkout -b"
 alias gd="git diff"
 alias sw="git switch"
 
-alias brew="env PATH=(string replace (pyenv root)/shims '' \"\$PATH\") brew"
+# alias brew="env PATH=(string replace (pyenv root)/shims '' \"\$PATH\") brew"
 
 alias vi="nvim"
 alias vim="nvim"
@@ -51,7 +48,7 @@ alias vim="nvim"
 # Source config.fish
 alias sfc="source ~/.config/fish/config.fish"
 
-set -g -x LC_ALL en_US.UTF-8
+set -gx LC_ALL en_US.UTF-8
 
 # Bash history
 function __history_previous_command
@@ -76,31 +73,21 @@ end
 bind ! __history_previous_command
 bind '$' __history_previous_command_arguments
 
-# Setup pyenv/rbenv/goenv to work with fish
-status --is-interactive
-source (rbenv init - | psub)
-source (pyenv init - | psub)
-source (goenv init - | psub)
-
-# Starship prompt https://starship.rs/
-starship init fish | source
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-status is-login; and pyenv init --path | source
-status is-interactive; and pyenv init - | source
-
 export EDITOR="nvim"
 
-# CS50 C compile settings
-export CC="gcc"
-# export CFLAGS="-fsanitize=signed-integer-overflow -fsanitize=undefined -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow"
-# export LDLIBS="-lcs50 -lm"
-
-set -gx LDFLAGS "-L/usr/local/opt/openblas/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/openblas/include"
-set -gx PKG_CONFIG_PATH "/usr/local/opt/openblas/lib/pkgconfig"
+source $HOME/.profile.fish # Load machine specific config
+set -gx LDFLAGS "-L/usr/local/opt/zlib/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/zlib/include"
+set -gx PKG_CONFIG_PATH "/usr/local/opt/zlib/lib/pkgconfig"
+set -gx KEEP_BUILD_PATH true
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
-set -gx GOOGLE_APPLICATION_CREDENTIALS "/Users/andrew.gaskell/google_application_credentials_ML_test.json"
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
+set -gx GOROOT (go env GOROOT)
+set -gx GOPATH (go env GOPATH)
 
+# set -g -x PATH $GOPATH/bin /opt/homebrew/bin $PATH
+
+# Starship prompt https://starship.rs/
+starship init fish | source

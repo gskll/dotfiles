@@ -6,6 +6,7 @@ keymap.set({ "n", "v" }, "B", "^", { desc = "Remap line start" })
 
 -- file saving
 keymap.set("n", "zz", vim.cmd.update, { desc = "Update from NORMAL", noremap = true })
+keymap.set("n", "zx", ":noa w<CR>", { desc = "Update from NORMAL no autocmd", noremap = true })
 keymap.set("i", "<C-W>", "<Esc>:update<CR>", { desc = "Update from INSERT" })
 
 -- move lines
@@ -35,7 +36,7 @@ keymap.set("n", "<leader>P", '"+P', { desc = "Put/paste before cursor from syste
 keymap.set("v", "<leader>p", '"_dP', { desc = "Replace selection with register without overwriting register" })
 
 -- text deletion
-keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete to void register" })
+keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete to void register", noremap = true })
 keymap.set({ "n", "v" }, "x", '"_x', { desc = "Delete single char to void register" })
 
 -- window management

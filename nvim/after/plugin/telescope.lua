@@ -5,6 +5,11 @@ local map = vim.keymap
 require("telescope").setup({
 	defaults = {
 		path_display = { truncate = 3 },
+		mappings = {
+			i = {
+				["<C-u>"] = false,
+			},
+		},
 	},
 	pickers = {
 		buffers = {

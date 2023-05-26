@@ -1,11 +1,13 @@
 local lsp = require("lsp-zero")
 local lspconfig = require("lspconfig")
+local util = require("lspconfig/util")
 
 lsp.preset("recommended")
 
 lsp.ensure_installed({
 	"tsserver",
 	"lua_ls",
+	"gopls",
 })
 
 -- Fix Undefined global 'vim'
@@ -65,7 +67,10 @@ local on_attach = function(client, bufnr)
 
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 	vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
-	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+	vim.keymap.set("n", "<leader>rn", function()
+		vim.lsp.buf.rename()
+		vim.cmd("silent! wa")
+	end, opts)
 
 	vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
@@ -98,6 +103,22 @@ local on_attach = function(client, bufnr)
 end
 
 lsp.on_attach(on_attach)
+
+lspconfig.gopls.setup({
+	on_attach = on_attach,
+	cmd = { "gopls" },
+	filetypes = { "go", "gomod", "gowork", "gotmpl" },
+	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+	settings = {
+		gopls = {
+			completeUnimported = true,
+			usePlaceholders = true,
+			analyses = {
+				unusedparams = true,
+			},
+		},
+	},
+})
 
 lsp.skip_server_setup({ "tsserver" })
 lsp.setup()

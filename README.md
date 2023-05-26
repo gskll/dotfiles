@@ -1,5 +1,36 @@
 # Dotfiles
 
+1. setup github ssh
+1. download dotfiles
+1. run script
+   1. install xcode-select
+   1. install homebrew
+   1. brew install
+   1. setup starship
+   1. set fish to default
+   1. setup fish config
+      1. include .profile.fish
+      1. install fisher and plugins
+   1. setup tmux config
+      1. install tmux plugins
+   1. setup neovim
+      1. install plugins
+   1. setup asdf
+      1. node
+      1. python
+      1. go
+1. setup mac os defaults
+1. install alfred3 and dash5
+1. install chrome plugins
+
+brew packages to look at
+
+- gh
+- mackup
+-
+
+# old
+
 1. `xcode-select --install`
 1. install homebrew
    `brew install neovim tmux gcc fish ctags gpg r rbenv pyenv goenv pandoc ruby sqlite starship tree zlib wget trash ripgrep`
