@@ -5,9 +5,9 @@ keymap.set("n", "<leader>Gc", ':Git commit --no-verify -m "')
 keymap.set("n", "<leader>Gp", ":Git push -u origin HEAD<CR>")
 keymap.set("n", "<leader>GS", ':Git stash push -m "')
 
-keymap.set("n", "<leader>gd", ":Gvdiff<CR>", { silent = true, noremap = true })
-keymap.set("n", "<leader>gh", ":diffget //2<CR>", { silent = true, noremap = true })
-keymap.set("n", "<leader>gl", ":diffget //3<CR>", { silent = true, noremap = true })
+keymap.set("n", "<leader>gd", ":Gvdiffsplit!<CR>", { noremap = true })
+keymap.set("n", "<leader>gh", ":diffget //2<CR>", { noremap = true })
+keymap.set("n", "<leader>gl", ":diffget //3<CR>", { noremap = true })
 
 local function showFugitiveGit()
 	if vim.fn.FugitiveHead() ~= "" then
