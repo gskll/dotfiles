@@ -83,9 +83,11 @@ set -gx KEEP_BUILD_PATH true
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
+source ~/.asdf/plugins/golang/set-env.fish
 source /opt/homebrew/opt/asdf/libexec/asdf.fish
 set -gx GOROOT (go env GOROOT)
-set -gx GOPATH (go env GOPATH)
+set -gx GOPATH (asdf where golang)/packages
+go env -w GOPATH=$GOPATH
 
 # set -g -x PATH $GOPATH/bin /opt/homebrew/bin $PATH
 
