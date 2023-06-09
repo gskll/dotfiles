@@ -8,6 +8,8 @@ lsp.ensure_installed({
 	"tsserver",
 	"lua_ls",
 	"gopls",
+	"html",
+	"cssls",
 })
 
 -- Fix Undefined global 'vim'
