@@ -22,6 +22,7 @@ return require("packer").startup(function(use)
 	-- treesitter configuration
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("nvim-treesitter/playground")
+	use({ "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" })
 
 	-- file utils
 	use({ "sitiom/nvim-numbertoggle" }) -- switch number style based on mode
