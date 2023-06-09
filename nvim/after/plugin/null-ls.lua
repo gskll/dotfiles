@@ -13,12 +13,19 @@ mason_null_ls.setup({
 		"gofumpt",
 		"golines",
 		"goimports-reviser",
+		"flake8",
+		"black",
 	},
 	automatic_installation = false,
 	automatic_setup = true,
 	handlers = {
 		golines = function()
 			null_ls.register(null_ls.builtins.formatting.golines.with({ args = { "-m", "120", "-t", "1" } }))
+		end,
+		flake8 = function()
+			null_ls.register(null_ls.builtins.diagnostics.flake8.with({
+				args = { "--max-line-length", "88", "--extend-ignore", "E203" },
+			}))
 		end,
 	},
 })
