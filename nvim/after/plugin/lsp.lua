@@ -13,7 +13,7 @@ lsp.ensure_installed({
 	"html",
 	"cssls",
 	"angularls",
-	"emmet",
+	"emmet_ls",
 })
 
 local on_attach = function(_, bufnr)
