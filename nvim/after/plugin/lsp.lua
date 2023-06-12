@@ -59,7 +59,7 @@ lspconfig.angularls.setup({
 lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
 lspconfig.gopls.setup({
-	on_attach = on_attach,
+	cmd = { "gopls", "serve" },
 	settings = {
 		gopls = {
 			completeUnimported = true,
