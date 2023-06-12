@@ -66,6 +66,16 @@ return require("packer").startup(function(use)
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use({ "joeveiga/ng.nvim" })
 
+	-- Snippets
+	use({
+		"L3MON4D3/LuaSnip",
+		after = "nvim-cmp",
+		tag = "v1.*",
+		run = "make install_jsregexp",
+	})
+	use("saadparwaiz1/cmp_luasnip")
+	use("rafamadriz/friendly-snippets")
+
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
