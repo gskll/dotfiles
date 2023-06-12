@@ -28,36 +28,19 @@ lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
 })
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
+	lsp.default_keymaps({ buffer = bufnr })
 	local opts = { buffer = bufnr, remap = false }
 
-	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-	vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-
-	vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
+	vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
 	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 	vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 	vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
+	vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
 	vim.keymap.set("n", "<leader>rn", function()
 		vim.lsp.buf.rename()
 		vim.cmd("silent! wa")
 	end, opts)
-
-	vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-
-	vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
-
-	-- typescript specific keymaps (e.g. rename file and update imports)
-	if client.name == "tsserver" then
-		vim.keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-		vim.keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports
-		vim.keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables
-	end
 
 	-- show line diagnostics automatically in hover window
 	-- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#show-line-diagnostics-automatically-in-hover-window
@@ -105,7 +88,14 @@ lsp.setup()
 
 require("typescript").setup({
 	server = {
-		on_attach = on_attach,
+		on_attach = function()
+			vim.keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
+			vim.keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports
+			vim.keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables
+		end,
+		on_init = function(client)
+			client.server_capabilities.semanticTokensProvider = nil
+		end,
 	},
 })
 
