@@ -44,16 +44,6 @@ lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
 })
 
-lsp.set_preferences({
-	suggest_lsp_servers = false,
-	sign_icons = {
-		error = "E",
-		warn = "W",
-		hint = "H",
-		info = "I",
-	},
-})
-
 local on_attach = function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
