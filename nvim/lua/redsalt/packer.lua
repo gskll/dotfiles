@@ -64,6 +64,7 @@ return require("packer").startup(function(use)
 		},
 	})
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
+	use({ "joeveiga/ng.nvim" })
 
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
