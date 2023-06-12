@@ -28,10 +28,15 @@ return require("packer").startup(function(use)
 	-- file utils
 	use({ "sitiom/nvim-numbertoggle" }) -- switch number style based on mode
 	use("mbbill/undotree") -- file/undo history visualizer
-	use("tpope/vim-surround") -- add, delete, change surroundings
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
-
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup()
+		end,
+	})
 	-- git integration
 	use("tpope/vim-fugitive") -- git support
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
