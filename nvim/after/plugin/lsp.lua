@@ -84,6 +84,9 @@ lspconfig.angularls.setup({
 		client.server_capabilities.renameProvider = false
 	end,
 })
+
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+
 lspconfig.gopls.setup({
 	on_attach = on_attach,
 	settings = {
