@@ -9,23 +9,7 @@ lsp.ensure_installed({
 	"gopls",
 	"html",
 	"cssls",
-})
-
--- Fix Undefined global 'vim'
-lsp.configure("lua_ls", {
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-		},
-	},
-})
-
-lspconfig.angularls.setup({
-	on_attach = function(client)
-		client.server_capabilities.renameProvider = false
-	end,
+	"angularls",
 })
 
 local cmp = require("cmp")
@@ -95,6 +79,11 @@ end
 
 lsp.on_attach(on_attach)
 
+lspconfig.angularls.setup({
+	on_attach = function(client)
+		client.server_capabilities.renameProvider = false
+	end,
+})
 lspconfig.gopls.setup({
 	on_attach = on_attach,
 	settings = {
