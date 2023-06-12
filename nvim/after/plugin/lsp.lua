@@ -1,7 +1,10 @@
-local lsp = require("lsp-zero")
+local lsp = require("lsp-zero").preset({
+	name = "recommended",
+	manage_nvim_cmp = {
+		set_extra_mappings = true,
+	},
+})
 local lspconfig = require("lspconfig")
-
-lsp.preset("recommended")
 
 lsp.ensure_installed({
 	"tsserver",
