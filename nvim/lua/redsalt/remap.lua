@@ -49,6 +49,8 @@ keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width & height" })
 keymap.set("n", "<leader>sx", vim.cmd.close, { desc = "Close current split window" })
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle split window maximization" })
+keymap.set("t", "<C-\\><C-\\>", "<C-\\><C-N><C-W><C-W>", { desc = "Exit term mode and swtich window" })
+
 -- Resize window using <ctrl> arrow keys
 keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
 keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
@@ -63,6 +65,9 @@ keymap.set("n", "<leader>tp", vim.cmd.tabp, { desc = "Go to previous tab" })
 
 keymap.set("n", "<leader><leader>", vim.cmd.source, { desc = "Source current file" })
 keymap.set("n", "Q", "<nop>", { desc = "Disable uppercase Q" })
+
+-- buffers
+keymap.set("n", "<C-[>", "<C-^>", { desc = "Switch to alternate file", noremap = true })
 
 -- Misc
 keymap.set(
