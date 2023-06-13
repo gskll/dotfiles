@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 local opt = vim.opt
 local api = vim.api
 
