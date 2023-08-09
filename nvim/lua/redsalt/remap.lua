@@ -67,7 +67,7 @@ keymap.set("n", "<leader><leader>", vim.cmd.source, { desc = "Source current fil
 keymap.set("n", "Q", "<nop>", { desc = "Disable uppercase Q" })
 
 -- buffers
-keymap.set("n", "<C-[>", "<C-^>", { desc = "Switch to alternate file", noremap = true })
+keymap.set("n", "<C-]>", "<C-^>", { desc = "Switch to alternate file", noremap = true })
 
 -- Misc
 keymap.set(

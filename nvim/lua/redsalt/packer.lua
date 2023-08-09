@@ -9,6 +9,7 @@ return require("packer").startup(function(use)
 	-- file navigation
 	use("theprimeagen/harpoon") -- file navigation
 	use("tpope/vim-vinegar") -- sensible netrw defaults
+	use("tpope/vim-sleuth") -- detect indentation
 	use({ -- fuzzy finding files
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
@@ -21,6 +22,7 @@ return require("packer").startup(function(use)
 
 	-- treesitter configuration
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
 	use("nvim-treesitter/playground")
 	use({ "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" })
 	use("nvim-treesitter/nvim-treesitter-context")
@@ -65,6 +67,7 @@ return require("packer").startup(function(use)
 	})
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use({ "joeveiga/ng.nvim" })
+	use({ "b0o/schemastore.nvim" })
 
 	-- Snippets
 	use({
@@ -118,7 +121,22 @@ return require("packer").startup(function(use)
 
 	use("laytan/cloak.nvim") -- hide sensitive information
 
-	use("github/copilot.vim")
+	use({
+		"zbirenbaum/copilot.lua",
+		config = function()
+			require("copilot").setup({
+				suggestion = { enabled = false },
+				panel = { enabled = false },
+			})
+		end,
+	})
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	})
 
 	use({
 		"folke/persistence.nvim",
