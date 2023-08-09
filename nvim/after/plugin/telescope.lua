@@ -26,6 +26,7 @@ require("telescope").setup({
 })
 
 -- files
+map.set("n", "<leader>fo", builtin.oldfiles, { desc = "Telescope oldfiles" })
 map.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find_files" })
 map.set("n", "<C-p>", builtin.git_files, { desc = "Telescope git_files" })
 map.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live_grep" })
