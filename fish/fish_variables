@@ -1,13 +1,13 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export ASDF_GOLANG_MOD_VERSION_ENABLED:true
-SETUVAR --export PYENV_ROOT:/Users/andrew\x2egaskell/\x2epyenv
 SETUVAR --export STARSHIP_LOG:error
+SETUVAR --export PYENV_ROOT:/Users/andrewgaskell/\x2epyenv
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/Users/andrew\x2egaskell/\x2elocal/share/z/data
-SETUVAR Z_DATA_DIR:/Users/andrew\x2egaskell/\x2elocal/share/z
-SETUVAR Z_EXCLUDE:\x5e/Users/andrew\x2egaskell\x24
+SETUVAR Z_DATA:/Users/andrewgaskell/\x2elocal/share/z/data
+SETUVAR Z_DATA_DIR:/Users/andrewgaskell/\x2elocal/share/z
+SETUVAR Z_EXCLUDE:\x5e/Users/andrewgaskell\x24
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
@@ -46,5 +46,5 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/Users/andrew\x2egaskell/\x2easdf/installs/golang/1\x2e19\x2e9/packages/bin\x1e/Users/andrew\x2egaskell/\x2easdf/shims\x1e/opt/homebrew/opt/asdf/libexec/bin\x1e/opt/homebrew/bin\x1e/Users/andrew\x2egaskell/\x2eyarn/bin
+SETUVAR fish_user_paths:/Users/andrewgaskell/\x2epyenv/bin\x1e/opt/homebrew/bin\x1e/Users/andrewgaskell/\x2eyarn/bin
 SETUVAR pure_version:2\x2e1\x2e8
