@@ -18,8 +18,10 @@ return require("packer").startup(function(use)
 
 	-- appearance
 	use({ "ellisonleao/gruvbox.nvim" }) -- colorscheme
-	use("nvim-lualine/lualine.nvim") -- statusline
-
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
+	})
 	-- treesitter configuration
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
