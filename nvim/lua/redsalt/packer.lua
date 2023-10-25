@@ -43,6 +43,7 @@ return require("packer").startup(function(use)
 	})
 	-- git integration
 	use("tpope/vim-fugitive") -- git support
+	use("tpope/vim-rhubarb") -- github integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
 	-- language server
