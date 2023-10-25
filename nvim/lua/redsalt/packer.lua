@@ -12,7 +12,7 @@ return require("packer").startup(function(use)
 	use("tpope/vim-sleuth") -- detect indentation
 	use({ -- fuzzy finding files
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.1",
+		tag = "0.1.4",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
