@@ -124,6 +124,7 @@ return require("packer").startup(function(use)
 			require("copilot").setup({
 				suggestion = { enabled = false },
 				panel = { enabled = false },
+				copilot_node_command = vim.fn.expand("$HOME") .. "/.asdf/installs/nodejs/20.1.0/bin/node",
 			})
 		end,
 	})
