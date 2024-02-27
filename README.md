@@ -35,10 +35,10 @@ brew packages to look at
 1. install homebrew
    `brew install neovim tmux gcc fish ctags gpg r rbenv pyenv goenv pandoc ruby sqlite starship tree zlib wget trash ripgrep`
 
-   `brew install --cask insomnia mongodb-compass firefox iterm2 flux google-chrome alfred rectangle 1password nordvpn notion vlc spotify visual-studio-code figma docker caffeine dash kap loom whatsapp zoom the-unarchiver`
+   `brew install --cask insomnia mongodb-compass firefox alacritty flux google-chrome alfred rectangle 1password nordvpn notion vlc spotify visual-studio-code figma docker caffeine dash kap loom whatsapp zoom the-unarchiver`
 
    `brew tap homebrew/cask-fonts`
-   `brew install --cask font-meslo-lg-nerd-font font-sauce-code-pro-nerd-font`
+   `brew install --cask  font-jetbrains-mono-nerd-font`
 
 1. Setup 1password
 1. install alfred3 from chrome - license key in 1password - https://cachefly.alfredapp.com/Alfred_3.8.6_972.dmg
