@@ -15,7 +15,7 @@ M.general = {
 	},
 	n = {
 		["zz"] = { vim.cmd.update, "Update buffer" },
-		["-"] = { "Explore", "Open netrw" },
+		["-"] = { vim.cmd.Ex, "Open netrw" },
 
 		["zx"] = { ":noa w<CR>", "Update buffer no autocmd" },
 
