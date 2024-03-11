@@ -62,18 +62,15 @@ local plugins = {
 		end,
 	},
 
-	-- vim vinegar - just replace?
-	-- vim - sleuth ??
 	--
 	-- telescope
-	-- colorscheme - gruvbox
-	-- lualine
-	-- treesitter
 	-- lsp
 	--
 	-- debugging
 	-- formatting
 	-- git
-	-- lsp
 	-- copilot
 }
+
+local lazy_config = require("plugins.configs.lazy_nvim")
+require("lazy").setup(plugins, lazy_config)
