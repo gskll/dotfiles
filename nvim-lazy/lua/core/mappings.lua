@@ -1,33 +1,39 @@
 local M = {}
 
+-- :help nvim_set_keymap
+-- mode "" is shorthand for :map ([{ "n", "v" }])
+
 M.general = {
-	plugin = false,
-	n = {
+	[""] = {
 		["E"] = { "$", "Jump to line end" },
 		["B"] = { "^", "Jump to line start" },
-		["zz"] = { vim.cmd.update, "Update buffer", opts = { noremap = true } },
 
-		["zx"] = { ":noa w<CR>", "Update buffer no autocmd", opts = { noremap = true } },
+		["<leader>y"] = { '"+y', "Yank to system clipboard" },
+
+		["<leader>d"] = { '"_d', "Delete to void register" },
+		["x"] = { '"_x', "Delete single char to void register" },
+	},
+	n = {
+		["zz"] = { vim.cmd.update, "Update buffer" },
+		["-"] = { "Explore", "Open netrw" },
+
+		["zx"] = { ":noa w<CR>", "Update buffer no autocmd" },
 
 		["J"] = { "mzJ`z", "Append next line keeping same cursor position" },
 
-		["j"] = { "v:count==0 ? 'gjzz' : 'jzz'", "Down", opts = { expr = true, silent = true, nnoremap = true } },
-		["k"] = { "v:count==0 ? 'gkzz' : 'kzz'", "Up", opts = { expr = true, silent = true, nnoremap = true } },
-		["<C-d>"] = { "<C-d>zz", "Keep cursor centred on screen down", opts = { nnoremap = true } },
-		["<C-u>"] = { "<C-u>zz", "Keep cursor centred on screen up", opts = { nnoremap = true } },
+		["j"] = { "v:count==0 ? 'gjzz' : 'jzz'", "Down", opts = { expr = true, silent = true, noremap = true } },
+		["k"] = { "v:count==0 ? 'gkzz' : 'kzz'", "Up", opts = { expr = true, silent = true, noremap = true } },
+		["<C-d>"] = { "<C-d>zz", "Keep cursor centred on screen down" },
+		["<C-u>"] = { "<C-u>zz", "Keep cursor centred on screen up" },
 
-		["n"] = { "nzzzv", "Keep cursor centred on next match", opts = { nnoremap = true } },
-		["N"] = { "Nzzzv", "Keep cursor centred on prev match", opts = { nnoremap = true } },
+		["n"] = { "nzzzv", "Keep cursor centred on next match" },
+		["N"] = { "Nzzzv", "Keep cursor centred on prev match" },
 		["<leader>/"] = { ":noh<CR>", "Clear search highlighting" },
 
-		["<leader>y"] = { '"+y', "Yank to system clipboard" },
 		["<leader>yy"] = { '"+yy', "Yank line to system clipboard" },
 		["<leader>Y"] = { ":%y+<CR>", "Yank buffer to system clipboard" },
 		["<leader>p"] = { '"+p', "Put after cursor from system clipboard" },
 		["<leader>P"] = { '"+P', "Put before cursor from system clipbaord" },
-
-		["<leader>d"] = { '"_d', "Delete to void register", opts = { nnoremap = true } },
-		["x"] = { '"_x', "Delete single char to void register", opts = { nnoremap = true } },
 
 		["<C-h>"] = { "<C-w><C-h>", "Move to window left of cursor" },
 		["<C-j>"] = { "<C-w><C-j>", "Move to window down of cursor" },
@@ -37,7 +43,7 @@ M.general = {
 		["<leader>sh"] = { "<C-w>s", "Split window horizontally" },
 		["<leader>se"] = { "<C-w>=", "Size splits equally" },
 		["<leader>sx"] = { vim.cmd.close, "Close current split" },
-		["<C-]>"] = { "<C-^>", "Switch alternate files", opts = { nnoremap = true } },
+		["<C-]>"] = { "<C-^>", "Switch alternate files" },
 
 		["<C-Up>"] = { ":resize +2<cr>", "Increase window height" },
 		["<C-Down>"] = { ":resize -2<cr>", "Decrease window height" },
@@ -60,24 +66,18 @@ M.general = {
 
 		["<leader>lo"] = { ":lopen<CR>", "Location list open" },
 		["<leader>lc"] = { vim.cmd.lclose, "Location list close" },
-		["<leader>lj"] = { ":lnext<CR>zz", "Location list next item", opts = { nnoremap = true } },
-		["<leader>lk"] = { ":lprev<CR>zz", "Location list prev item", opts = { nnoremap = true } },
+		["<leader>lj"] = { ":lnext<CR>zz", "Location list next item" },
+		["<leader>lk"] = { ":lprev<CR>zz", "Location list prev item" },
 	},
 	i = {
 		["jk"] = { "<Esc>", "Escape insert mode" },
 		["<C-W>"] = { "<Esc>:update<CR>", "Update buffer" },
 	},
 	v = {
-		["E"] = { "$", "Jump to line end" },
-		["B"] = { "^", "Jump to line start" },
 		["J"] = { ":m '>+1<CR>gv=gv", "Move line selection down" },
 		["K"] = { ":m '<-2<CR>gv=gv", "Move line selection up" },
 
-		["<leader>y"] = { '"+y', "Yank to system clipboard" },
 		["<leader>p"] = { '"_dP', "Replace selection with register without overwriting register" },
-
-		["<leader>d"] = { '"_d', "Delete to void register", opts = { nnoremap = true } },
-		["x"] = { '"_x', "Delete single char to void register", opts = { nnoremap = true } },
 	},
 	t = {
 		["<C-\\><C-\\>"] = { "<C-\\><C-N>", "Exit term mode" },
@@ -85,16 +85,20 @@ M.general = {
 }
 
 M.maximiser = {
-	plugin = true,
 	n = {
 		["<leader>sm"] = { ":MaximiserToggle<CR>", "Toggle split window maximisation" },
 	},
 }
 
 M.cellular_automaton = {
-	plugin = true,
 	n = {
 		["<leader>fml"] = { ":CellularAutomaton make_it_rain<CR>", "fml" },
+	},
+}
+
+M.undotree = {
+	n = {
+		["<leader>u"] = { vim.cmd.UndotreeToggle, "Toggle undotree" },
 	},
 }
 
