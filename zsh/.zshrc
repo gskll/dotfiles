@@ -10,6 +10,10 @@ plugins=(git dotenv z asdf zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
+export CONFIG="$HOME/dotfiles/zsh"
+fpath=($CONFIG/functions $fpath)
+autoload chpwd switch_color_scheme
+
 source $HOME/.profile.zsh
 
 if [[ -n $SSH_CONNECTION ]]; then
