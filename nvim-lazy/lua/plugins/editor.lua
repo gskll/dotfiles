@@ -55,7 +55,7 @@ return {
 			{ "<c-p>", "<cmd>Telescope git_files<cr>", desc = "Git files" },
 
 			-- misc
-			{"<leader>fr", "<cmd>Telescope resume<cr>", desc = "Search resume"}
+			{ "<leader>fr", "<cmd>Telescope resume<cr>", desc = "Search resume" },
 
 			-- git
 			{ "<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = "Telescope git_commits" } },
