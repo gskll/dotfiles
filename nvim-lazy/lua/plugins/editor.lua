@@ -48,12 +48,14 @@ return {
 		end,
 		keys = {
 			-- files
-			{ "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
+			{ "<leader><leader>", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
+			{ "<leader>f.", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
 			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
 			{ "<leader>ffh", "<cmd>Telescope find_files hidden=true<cr>", desc = "Find files with hidden" },
-			{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
-			{ "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
 			{ "<c-p>", "<cmd>Telescope git_files<cr>", desc = "Git files" },
+
+			-- misc
+			{"<leader>fr", "<cmd>Telescope resume<cr>", desc = "Search resume"}
 
 			-- git
 			{ "<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = "Telescope git_commits" } },
@@ -65,15 +67,13 @@ return {
 			-- search
 			{ "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Telescope live_grep" } },
 			{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Telescope help tags" },
-			{ '<leader>fr"', "<cmd>Telescope registers<cr>", desc = "Registers" },
+			{ '<leader>fR"', "<cmd>Telescope registers<cr>", desc = "Registers" },
 			{ "<leader>fc", "<cmd>Telescope command_history<cr>", desc = "Command History" },
 			{ "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
 			{ "<leader>fD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
 			{ "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
 			{ "<leader>fM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
 			{ "<leader>fm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
-			{ "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", "Goto symbol" },
-			{ "<leader>fS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Goto Symbol (Workspace)" },
 		},
 	},
 
