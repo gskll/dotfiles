@@ -1,4 +1,3 @@
-require("core.settings")
+require("core.options")
+require("core.keymaps")
 require("core.augroup")
-
-require("core.utils").load_mappings()
