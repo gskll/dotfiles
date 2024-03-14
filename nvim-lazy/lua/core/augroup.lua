@@ -60,3 +60,13 @@ autocmd({ "BufLeave", "FocusLost", "InsertEnter", "CmdlineEnter", "WinLeave" }, 
 
 local startupGroup = augroup("startup", { clear = true })
 autocmd("VimEnter", { group = startupGroup, pattern = "*", command = "Ex" })
+
+local colorGroup = augroup("colorscheme", { clear = true })
+autocmd("BufWritePost", {
+	group = colorGroup,
+	pattern = "~/dotfiles/nvim-lazy/init.lua",
+	callback = function()
+		local active_color_scheme = require("core.colors").active
+		require("core.colors")[active_color_scheme]()
+	end,
+})
