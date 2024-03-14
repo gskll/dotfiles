@@ -60,5 +60,3 @@ opt.foldlevel = 1
 opt.foldenable = false -- open folds by default
 
 opt.inccommand = "split"
-opt.list = true
-opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
