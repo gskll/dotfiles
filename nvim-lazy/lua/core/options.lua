@@ -37,7 +37,7 @@ opt.updatetime = 250
 opt.backup = false
 opt.undofile = true
 opt.undodir = os.getenv("HOME") .. "/.vim_undodir"
-opt.timeoutlen = 300
+opt.timeoutlen = 500
 
 opt.hlsearch = true
 opt.incsearch = true
@@ -49,8 +49,6 @@ opt.termguicolors = true
 opt.scrolloff = 8
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
-
-opt.updatetime = 50
 
 -- opt.colorcolumn = "80"
 -- opt.cursorline = true
