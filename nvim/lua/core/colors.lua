@@ -2,7 +2,7 @@ M = {}
 
 -- this should be changed through the command line to keep tmux/alacritty in sync
 -- see zsh function `switch_color_scheme`
-M.active = "gruvbox"
+M.active = "tokyonight"
 
 function M.gruvbox()
 	vim.cmd.colorscheme("gruvbox")
