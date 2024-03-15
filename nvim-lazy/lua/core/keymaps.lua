@@ -73,11 +73,18 @@ map("n", "<C-]>", "<C-^>", { desc = "Switch to alternate file", noremap = true }
 -- Misc
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace current word global" })
 
+-- quickfix
 -- ]q/[q to navigate quickfix - set in trouble.lua
 map("n", "<leader>co", vim.cmd.copen, { desc = "Quickfix list open" })
 map("n", "<leader>cc", vim.cmd.cclose, { desc = "Quickfix list close" })
 
+-- loclist
 map("n", "<leader>lo", ":lopen<CR>", { desc = "Location list open" })
 map("n", "<leader>lc", vim.cmd.lclose, { desc = "Location list close" })
 map("n", "<leader>lj", ":lnext<CR>zz", { desc = "Location list next item", noremap = true })
 map("n", "<leader>lk", ":lprev<CR>zz", { desc = "Location list prev item", noremap = true })
+
+-- diagnostics
+map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
+map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic float" })
