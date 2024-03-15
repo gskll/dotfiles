@@ -5,7 +5,7 @@ function switch_color_scheme() {
     color_schemes_map=(
         [1]="gruvbox"
         [2]="tokyonight"
-        [3]="kawagana"
+        [3]="kanagawa"
     )
 
     color_scheme=${color_schemes_map[$color_scheme_id]}
@@ -15,7 +15,7 @@ function switch_color_scheme() {
         return 1
     fi
 
-    nvim_color_config_path="$HOME/dotfiles/nvim-lazy/lua/core/colors.lua"
+    nvim_color_config_path="$HOME/dotfiles/nvim/lua/core/colors.lua"
     alacritty_config_path="$HOME/dotfiles/alacritty/alacritty.toml"
     tmux_config_path="$HOME/dotfiles/tmux/tmux.conf"
 
