@@ -170,4 +170,58 @@ return {
 			{ "<leader>fT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
 		},
 	},
+	{
+		"mbbill/undotree",
+		cmd = "UndotreeToggle",
+		keys = { "<leader>u", "<cmd>UndotreeToggle<cr>", "Toggle undo tree" },
+	},
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		keys = {
+			{
+				"<leader>a",
+				function()
+					require("harpoon"):list():append()
+				end,
+				"Append to harpoon list",
+			},
+			{
+				"<C-e>",
+				function()
+					require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
+				end,
+				"Toggle harpoon popup",
+			},
+			{
+				"<leader>1",
+				function()
+					require("harpoon"):list():select(1)
+				end,
+				"Select harpoon list item 1",
+			},
+			{
+				"<C-S-P>",
+				function()
+					require("harpoon"):list():prev()
+				end,
+				"Previous harpoon list buffer",
+			},
+			{
+				"<C-S-N",
+				function()
+					require("harpoon"):list():next()
+				end,
+				"Next harpoon list buffer",
+			},
+		},
+		opts = {},
+	},
+	{
+		"eandrju/cellular-automaton.nvim",
+		cmd = "CellularAutomaton",
+		keys = { "<leader>fml", "<cmd>CellularAutomaton make_it_rain<cr>", "fml" },
+		opts = {},
+	},
 }
