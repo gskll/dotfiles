@@ -2,9 +2,17 @@ return {
 	{
 		"stevearc/conform.nvim",
 		dependencies = { "mason.nvim" },
-		lazy = true,
+		event = "BufWritePre",
 		cmd = "ConformInfo",
 		keys = {
+			{
+				"<leader>f",
+				function()
+					require("conform").format({ async = true, lsp_fallback = true })
+				end,
+				mode = "",
+				desc = "Format buffer",
+			},
 			{
 				"<leader>cF",
 				function()
@@ -15,7 +23,7 @@ return {
 			},
 		},
 		opts = {
-			notify_on_error = false,
+			notify_on_error = true,
 			format_on_save = {
 				timeout_ms = 500,
 				lsp_fallback = true,
@@ -25,10 +33,10 @@ return {
 				python = { "black" },
 				javascript = { { "prettierd", "prettier" } },
 				sh = { "shfmt" },
-				go = { "goimports", "gofmt" },
+				go = { "goimports", "gofumpt", "golines" },
 			},
 			formatters = {
-				injected = { options = { ignore_errors = true } },
+				injected = { options = { ignore_errors = false } },
 			},
 		},
 	},
