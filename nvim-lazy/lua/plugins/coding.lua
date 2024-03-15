@@ -86,4 +86,64 @@ return {
 			})
 		end,
 	},
+
+	{
+		"danymat/neogen",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"L3MON4D3/LuaSnip",
+		},
+		keys = {
+			{
+				"<leader>nf",
+				function()
+					require("neogen").generate({ type = "func" })
+				end,
+				"Generate function annotation",
+			},
+			{
+				"<leader>nt",
+				function()
+					require("neogen").generate({ type = "type" })
+				end,
+				"Generate type annotation",
+			},
+		},
+		config = function()
+			require("neogen").setup({
+				snippet_engine = "luasnip",
+			})
+		end,
+	},
+
+	{
+		"nvim-neotest/neotest",
+		keys = { "<leader>tt", "<leader>tf", "<leader>td" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		config = function()
+			local neotest = require("neotest")
+			neotest.setup({
+				adapters = {
+					require("neotest-go"),
+				},
+			})
+
+			vim.keymap.set("n", "<leader>tt", function()
+				neotest.run.run()
+			end, "Run nearest test")
+			vim.keymap.set("n", "<leader>tf", function()
+				neotest.run.run(vim.fn.expand("%"))
+			end, "Run current file")
+			vim.keymap.set("n", "<leader>td", function()
+				require("neotest").run.run({ strategy = "dap" })
+			end, "Debug nearest test")
+			vim.keymap.set("n", "<leader>tx", function()
+				require("neotest").run.stop()
+			end, "Stop nearest test")
+		end,
+	},
 }
