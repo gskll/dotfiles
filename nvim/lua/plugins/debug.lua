@@ -1,9 +1,9 @@
 return {
 	"mfussenegger/nvim-dap",
 	cmd = "DapToggleBreakpoint",
-	key = {
-		{},
-	},
+	-- keys = {
+	-- 	{},
+	-- },
 	dependencies = {
 		"rcarriga/nvim-dap-ui",
 		"williamboman/mason.nvim",
