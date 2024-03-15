@@ -9,9 +9,6 @@ map("n", "zz", vim.cmd.update, { desc = "Update from NORMAL", noremap = true })
 map("n", "zx", ":noa w<CR>", { desc = "Update from NORMAL no autocmd", noremap = true })
 map("i", "<C-W>", "<Esc>:update<CR>", { desc = "Update from INSERT" })
 
--- netrw
-map("n", "-", vim.cmd.Ex, { desc = "Open netrw", noremap = true, silent = true })
-
 -- move lines
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line selection down" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line selection up" })
