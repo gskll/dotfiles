@@ -82,6 +82,10 @@ map("n", "<leader>lj", ":lnext<CR>zz", { desc = "Location list next item", norem
 map("n", "<leader>lk", ":lprev<CR>zz", { desc = "Location list prev item", noremap = true })
 
 -- diagnostics
-map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+map("n", "[d", function()
+	vim.diagnostic.goto_prev({ float = false })
+end, { desc = "Go to previous diagnostic message" })
+map("n", "]d", function()
+	vim.diagnostic.goto_next({ float = false })
+end, { desc = "Go to next diagnostic message" })
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic float" })
