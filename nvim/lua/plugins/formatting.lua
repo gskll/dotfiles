@@ -34,6 +34,7 @@ return {
 				javascript = { { "prettierd", "prettier" } },
 				sh = { "shfmt" },
 				go = { "goimports", "gofumpt", "golines" },
+				markdown = { { "prettierd", "prettier" } },
 			},
 			formatters = {
 				injected = { options = { ignore_errors = false } },
