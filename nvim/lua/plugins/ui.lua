@@ -15,8 +15,8 @@ return {
 	},
 	{
 		"echasnovski/mini.statusline",
-		event = "",
-		version = "*",
+		event = "VeryLazy",
+		version = false,
 		config = function()
 			require("mini.statusline").setup()
 		end,
