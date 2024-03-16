@@ -1,0 +1,32 @@
+function switch_color_scheme() {
+    color_scheme_id=$1
+
+    typeset -A color_schemes_map
+    color_schemes_map=(
+        [1]="gruvbox"
+        [2]="tokyonight"
+        [3]="kanagawa"
+    )
+
+    color_scheme=${color_schemes_map[$color_scheme_id]}
+
+    if [[ -z "$color_scheme" ]]; then
+        echo "Invalid color scheme ID: $color_scheme_id"
+        return 1
+    fi
+
+    nvim_color_config_path="$HOME/dotfiles/nvim/lua/core/colors.lua"
+    alacritty_config_path="$HOME/dotfiles/alacritty/alacritty.toml"
+    tmux_config_path="$HOME/dotfiles/tmux/tmux.conf"
+
+    sed -i '' "s/M.active = \".*\"/M.active = \"$color_scheme\"/" $nvim_color_config_path
+    sed -i '' "s|^import = \[ \"~/dotfiles/alacritty/colors/.*\.toml\" \]|import = \[ \"~/dotfiles/alacritty/colors/$color_scheme\.toml\" \]|" $alacritty_config_path
+    sed -i '' "s|^source ~/dotfiles/tmux/colors/.*\.conf|source ~/dotfiles/tmux/colors/$color_scheme\.conf|" $tmux_config_path
+
+    if tmux info &> /dev/null; then
+        tmux source-file "$HOME/dotfiles/tmux/tmux.conf"
+    fi
+
+    echo "Active colorscheme: $color_scheme"
+}
+
