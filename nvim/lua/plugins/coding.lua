@@ -117,37 +117,6 @@ return {
 	},
 
 	{
-		"nvim-neotest/neotest",
-		keys = { "<leader>tt", "<leader>tf", "<leader>td" },
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"antoinemadec/FixCursorHold.nvim",
-			"nvim-treesitter/nvim-treesitter",
-		},
-		config = function()
-			local neotest = require("neotest")
-			neotest.setup({
-				adapters = {
-					require("neotest-go"),
-				},
-			})
-
-			vim.keymap.set("n", "<leader>tt", function()
-				neotest.run.run()
-			end, "Run nearest test")
-			vim.keymap.set("n", "<leader>tf", function()
-				neotest.run.run(vim.fn.expand("%"))
-			end, "Run current file")
-			vim.keymap.set("n", "<leader>td", function()
-				require("neotest").run.run({ strategy = "dap" })
-			end, "Debug nearest test")
-			vim.keymap.set("n", "<leader>tx", function()
-				require("neotest").run.stop()
-			end, "Stop nearest test")
-		end,
-	},
-
-	{
 		"echasnovski/mini.comment",
 		event = "VeryLazy",
 		dependencies = {
