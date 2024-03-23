@@ -12,6 +12,7 @@ return {
 			{ "<leader>gl", "<cmd>diffget //3<cr>", "Diff get right" },
 		},
 	},
+
 	{
 		"tpope/vim-rhubarb",
 		cmd = "Gbrowse",
@@ -19,6 +20,7 @@ return {
 			{ "<leader>GB", "<cmd>GBrowse<cr>", "Open in github" },
 		},
 	},
+
 	{
 		"lewis6991/gitsigns.nvim",
 		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
@@ -83,6 +85,7 @@ return {
 			end,
 		},
 	},
+
 	{
 		"pwntester/octo.nvim",
 		dependencies = {

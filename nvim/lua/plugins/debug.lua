@@ -1,14 +1,13 @@
 return {
 	"mfussenegger/nvim-dap",
 	cmd = "DapToggleBreakpoint",
-	-- keys = {
-	-- 	{},
-	-- },
+	keys = { "<leader>ic", "<leader>ib", "<leader>iB", "<leader>iO>" },
 	dependencies = {
 		"rcarriga/nvim-dap-ui",
 		"williamboman/mason.nvim",
 		"jay-babu/mason-nvim-dap.nvim",
 
+		"mfussenegger/nvim-dap-python",
 		"leoluz/nvim-dap-go",
 	},
 	config = function()
@@ -19,14 +18,16 @@ return {
 			automatic_setup = true,
 			ensure_installed = {
 				"delve",
+				"debugpy",
 			},
 		})
 
-		-- "i" for "inspect"
 		vim.keymap.set("n", "<leader>ic", dap.continue, { desc = "Debug: Start/Continue" })
 		vim.keymap.set("n", "<leader>ii", dap.step_into, { desc = "Debug: Step Into" })
 		vim.keymap.set("n", "<leader>io", dap.step_over, { desc = "Debug: Step Over" })
 		vim.keymap.set("n", "<leader>iu", dap.step_out, { desc = "Debug: Step Out" })
+		vim.keymap.set("n", "<leader>it", dap.terminate, { desc = "Debug:Terminate" })
+		vim.keymap.set("n", "<leader>iC", dap.run_to_cursor, { desc = "Debug:Run to Cursor" })
 		vim.keymap.set("n", "<leader>ib", dap.toggle_breakpoint, { desc = "Debug: Toggle Breakpoint" })
 		vim.keymap.set("n", "<leader>iB", function()
 			dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
@@ -60,19 +61,15 @@ return {
 		dap.listeners.before.event_terminated["dapui_config"] = dapui.close
 		dap.listeners.before.event_exited["dapui_config"] = dapui.close
 
-		-- go specific
-		vim.keymap.set(
-			"n",
-			"<leader>bt",
-			require("dap-go").debug_test,
-			{ desc = "Debug nearest go test", noremap = true }
-		)
-		vim.keymap.set(
-			"n",
-			"<leader>bl",
-			require("dap-go").debug_last_test,
-			{ desc = "Debug last go test", noremap = true }
-		)
 		require("dap-go").setup()
+
+		vim.keymap.set("<leader>ipm", require("dap-python").test_method, { desc = "Debug (python): test method" })
+		vim.keymap.set("<leader>ipc", require("dap-python").test_class, { desc = "Debug (python): test class" })
+		vim.keymap.set(
+			"<leader>ips",
+			require("dap-python").debug_selection,
+			{ desc = "Debug (python): debug selection" }
+		)
+		require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
 	end,
 }
