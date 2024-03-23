@@ -146,6 +146,7 @@ return {
 			end, "Stop nearest test")
 		end,
 	},
+
 	{
 		"echasnovski/mini.comment",
 		event = "VeryLazy",
@@ -164,6 +165,7 @@ return {
 			},
 		},
 	},
+
 	{
 		"echasnovski/mini.ai",
 		event = "VeryLazy",
@@ -183,6 +185,7 @@ return {
 			}
 		end,
 	},
+
 	{
 		"echasnovski/mini.pairs",
 		event = "VeryLazy",
@@ -197,6 +200,7 @@ return {
 		},
 		opts = {},
 	},
+
 	{
 		"echasnovski/mini.surround",
 		event = "VeryLazy",

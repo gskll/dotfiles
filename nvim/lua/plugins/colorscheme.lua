@@ -4,6 +4,7 @@ return {
 		lazy = false,
 		priority = 1000,
 	},
+
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -19,6 +20,7 @@ return {
 			},
 		},
 	},
+
 	{
 		"rebelot/kanagawa.nvim",
 		lazy = false,

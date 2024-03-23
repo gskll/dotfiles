@@ -13,6 +13,7 @@ return {
 		},
 		opts = {},
 	},
+
 	{
 		"echasnovski/mini.statusline",
 		event = "VeryLazy",

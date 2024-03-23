@@ -170,11 +170,13 @@ return {
 			{ "<leader>fT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
 		},
 	},
+
 	{
 		"mbbill/undotree",
 		cmd = "UndotreeToggle",
-		keys = { "<leader>u", "<cmd>UndotreeToggle<cr>", "Toggle undo tree" },
+		keys = { { "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Toggle undo tree" } },
 	},
+
 	{
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
@@ -218,10 +220,11 @@ return {
 		},
 		opts = {},
 	},
+
 	{
 		"eandrju/cellular-automaton.nvim",
 		cmd = "CellularAutomaton",
-		keys = { "<leader>fml", "<cmd>CellularAutomaton make_it_rain<cr>", "fml" },
+		keys = { { "<leader>fml", "<cmd>CellularAutomaton make_it_rain<cr>", desc = "fml" } },
 		opts = {},
 	},
 }

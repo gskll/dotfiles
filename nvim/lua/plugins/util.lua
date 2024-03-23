@@ -2,6 +2,7 @@ return {
 	{ "nvim-lua/plenary.nvim", lazy = true },
 	{ "tpope/vim-vinegar", lazy = false, priority = 1000 },
 	{ "folke/neodev.nvim", opts = {} },
+
 	{
 		"folke/persistence.nvim",
 		event = "BufReadPre",
