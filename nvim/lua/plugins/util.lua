@@ -1,7 +1,5 @@
 return {
 	{ "nvim-lua/plenary.nvim", lazy = true },
-	{ "tpope/vim-vinegar", lazy = false, priority = 1000 },
-	{ "folke/neodev.nvim", opts = {} },
 
 	{
 		"folke/persistence.nvim",
@@ -30,26 +28,5 @@ return {
 				desc = "Don't Save Current Session",
 			},
 		},
-	},
-
-	{
-		"laytan/cloak.nvim",
-		config = function()
-			require("cloak").setup({
-				enabled = true,
-				cloak_character = "*",
-				highlight_group = "Comment",
-				patterns = {
-					{
-						file_pattern = {
-							".env*",
-							"wrangler.toml",
-							".dev.vars",
-						},
-						cloak_pattern = "=.+",
-					},
-				},
-			})
-		end,
 	},
 }

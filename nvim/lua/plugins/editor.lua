@@ -1,4 +1,6 @@
 return {
+	{ "tpope/vim-vinegar", lazy = false, priority = 1000 },
+
 	{
 		"nvim-telescope/telescope.nvim",
 		cmd = "Telescope",
