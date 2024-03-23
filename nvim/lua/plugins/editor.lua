@@ -226,7 +226,9 @@ return {
 	{
 		"eandrju/cellular-automaton.nvim",
 		cmd = "CellularAutomaton",
-		keys = { { "<leader>fml", "<cmd>CellularAutomaton make_it_rain<cr>", desc = "fml" } },
-		opts = {},
+		keys = { "<leader>fml" },
+		config = function()
+			vim.api.nvim_set_keymap("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<cr>", { noremap = true })
+		end,
 	},
 }
