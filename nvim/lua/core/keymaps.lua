@@ -40,10 +40,11 @@ map({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete to void register", norema
 map({ "n", "v" }, "x", '"_x', { desc = "Delete single char to void register" })
 
 -- window management
-map("n", "<C-h>", "<C-w><C-h>", { desc = "Move to cursor left a window" })
-map("n", "<C-j>", "<C-w><C-j>", { desc = "Move to cursor down a window" })
-map("n", "<C-k>", "<C-w><C-k>", { desc = "Move to up a window" })
-map("n", "<C-l>", "<C-w><C-l>", { desc = "Move to right a window" })
+-- use tmux-navigator plugin for pane switching
+-- map("n", "<C-h>", "<C-w><C-h>", { desc = "Move to cursor left a window" })
+-- map("n", "<C-j>", "<C-w><C-j>", { desc = "Move to cursor down a window" })
+-- map("n", "<C-k>", "<C-w><C-k>", { desc = "Move to up a window" })
+-- map("n", "<C-l>", "<C-w><C-l>", { desc = "Move to right a window" })
 map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 map("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 map("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width & height" })
