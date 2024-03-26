@@ -14,6 +14,7 @@ export CONFIG="$HOME/dotfiles/zsh"
 fpath=($CONFIG/functions $fpath)
 autoload chpwd switch_color_scheme
 
+autoload -Uz compinit; compinit;
 source $HOME/.profile.zsh
 
 if [[ -n $SSH_CONNECTION ]]; then
