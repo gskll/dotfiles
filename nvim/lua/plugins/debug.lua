@@ -29,6 +29,8 @@ return {
 		vim.keymap.set("n", "<leader>it", dap.terminate, { desc = "Debug:Terminate" })
 		vim.keymap.set("n", "<leader>iC", dap.run_to_cursor, { desc = "Debug:Run to Cursor" })
 		vim.keymap.set("n", "<leader>ib", dap.toggle_breakpoint, { desc = "Debug: Toggle Breakpoint" })
+		vim.keymap.set("n", "<leader>il", dap.list_breakpoints, { desc = "Debug: List Breakpoints" })
+		vim.keymap.set("n", "<leader>iR", dap.clear_breakpoints, { desc = "Debug: Remove All Breakpoints" })
 		vim.keymap.set("n", "<leader>iB", function()
 			dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
 		end, { desc = "Debug: Set Breakpoint" })
