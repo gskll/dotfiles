@@ -63,9 +63,10 @@ return {
 
 		require("dap-go").setup()
 
-		vim.keymap.set("<leader>ipm", require("dap-python").test_method, { desc = "Debug (python): test method" })
-		vim.keymap.set("<leader>ipc", require("dap-python").test_class, { desc = "Debug (python): test class" })
+		vim.keymap.set("n", "<leader>ipm", require("dap-python").test_method, { desc = "Debug (python): test method" })
+		vim.keymap.set("n", "<leader>ipc", require("dap-python").test_class, { desc = "Debug (python): test class" })
 		vim.keymap.set(
+			"n",
 			"<leader>ips",
 			require("dap-python").debug_selection,
 			{ desc = "Debug (python): debug selection" }
