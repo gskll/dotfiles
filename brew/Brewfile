@@ -1,5 +1,4 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
 
@@ -55,7 +54,7 @@ brew "tree"
 brew "wget"
 brew "yt-dlp"
 
-cash "appcleaner"
+cask "appcleaner"
 cask "firefox"
 cask "alacritty"
 cask "google-chrome"
