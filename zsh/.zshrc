@@ -6,6 +6,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git dotenv z asdf zsh-autosuggestions zsh-syntax-highlighting)
 
 . ~/.asdf/plugins/golang/set-env.zsh
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
