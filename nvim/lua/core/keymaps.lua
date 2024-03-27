@@ -52,11 +52,11 @@ map("n", "<leader>sx", vim.cmd.close, { desc = "Close current split window" })
 map("t", "<C-\\><C-\\>", "<C-\\><C-N>", { desc = "Exit term mode" })
 
 -- Resize window using <ctrl> arrow keys
-map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
-
+-- map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+-- map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+-- map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+-- map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+--
 -- tab management
 map("n", "<leader>to", vim.cmd.tabnew, { desc = "Open new tab" })
 map("n", "<leader>tx", vim.cmd.tabclose, { desc = "Close current tab" })

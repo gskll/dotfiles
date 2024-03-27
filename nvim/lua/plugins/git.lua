@@ -3,7 +3,7 @@ return {
 		"tpope/vim-fugitive",
 		cmd = "Git",
 		keys = {
-			{ "<leader>G", "<cmd>Git<cr>", "Open fugitive" },
+			{ "<leader>gt", "<cmd>Git<cr>", "Open fugitive" },
 			{ "<leader>Gc", ':Git commit --no-verify -m "', "Git quick commit" },
 			{ "<leader>Gp", "<cmd>Git push -u origin HEAD<cr>", "Git push upstream" },
 			{ "<leader>GS", ':Git stash push -m "', "Git stash push" },
