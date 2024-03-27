@@ -13,9 +13,18 @@
 
 1. set zsh to default `chsh -s $(which zsh)`
 1. install [ohmyzsh](https://ohmyz.sh/#install)
+1. install ohmyzsh plugins
+
+   - `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+   - `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
 
    - `touch ~/.profile.zsh`
    - `ln -s ~/dotfiles/zsh/.zshrc ~`
+   - `ln -s ~/dotfiles/zsh/.zprofile ~`
+
+1. setup alacritty
+
+   - `ln -s ~/dotfiles/alacritty/ ~/.config/`
 
 1. setup tmux config
 
