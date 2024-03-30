@@ -143,7 +143,7 @@ setopt prompt_subst
 
 git_prompt_info() {
   local dirstatus=""
-  local dirty="%{$fg_bold[red]%} X%{$reset_color%}"
+  local dirty="%{$fg[red]%} ±%{$reset_color%}"
 
   if [[ ! -z $(git status --porcelain 2> /dev/null | tail -n1) ]]; then
     dirstatus=$dirty
@@ -155,8 +155,8 @@ git_prompt_info() {
 }
 
 local dir_info="%{$fg[cyan]%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
-local promptnormal="φ %{$reset_color%}"
-local promptjobs="%{$fg[yellow]%}φ %{$reset_color%}"
+local promptnormal="%{$fg_bold[green]%}→ %{$reset_color%}"
+local promptjobs="%{$fg[yellow]%}→ %{$reset_color%}"
 
 PROMPT='${dir_info}$(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 
