@@ -10,6 +10,7 @@ return {
 
 			"nvim-neotest/neotest-go",
 			"nvim-neotest/neotest-python",
+			"olimorris/neotest-phpunit",
 		},
 		config = function()
 			local neotest = require("neotest")
@@ -17,6 +18,7 @@ return {
 				adapters = {
 					require("neotest-go"),
 					require("neotest-python"),
+					require("neotest-phpunit"),
 				},
 			})
 
