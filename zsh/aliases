@@ -1,0 +1,52 @@
+alias vi="nvim"
+alias vim="nvim"
+
+
+alias history='history 1'
+alias hs='history | grep '
+
+# Edit/Source vim config
+alias ez='vi ~/.zshrc'
+alias sz='source ~/.zshrc'
+
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+alias l="ls -1p"
+alias ll="ls -lrth"
+alias la="ls -lrtha"
+
+alias ,,="cd -"
+
+if type rm &> /dev/null; then
+    alias rm="trash"
+fi
+
+alias gs="git status"
+alias ga="git add"
+alias gaa="git add -A"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gll="git log"
+alias gl="git --no-pager log --oneline"
+alias glf="git --no-pager log --oneline -n 5"
+alias gp="git push"
+alias gpl="git pull"
+alias gpr="git pull --rebase"
+
+alias gd="git diff"
+alias gdc='git diff --cached'
+
+alias gb="git --no-pager branch"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias sw="git switch"
+alias gup="git push -u origin HEAD"
+
+alias gre='git rebase'
+alias cdr='cd $(git rev-parse --show-toplevel)' # cd to git Root
+
+# ceedee dot dot dot
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
