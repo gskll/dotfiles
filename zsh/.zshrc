@@ -156,7 +156,7 @@ git_prompt_info() {
 
 local dir_info="%{$fg[cyan]%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
 local promptnormal="%{$fg_bold[green]%}→ %{$reset_color%}"
-local promptjobs="%{$fg[yellow]%}→ %{$reset_color%}"
+local promptjobs="%{$fg_bold[yellow]%}→ %{$reset_color%}"
 
 PROMPT='${dir_info}$(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 
