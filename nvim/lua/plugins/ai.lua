@@ -21,6 +21,7 @@ return {
 					temperature = 0.2,
 					top_p = 0.1,
 					n = 1,
+					max_tokens = 4095,
 				},
 				openai_edit_params = {
 					model = "gpt-4-turbo-preview",
