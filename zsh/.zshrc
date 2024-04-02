@@ -152,13 +152,20 @@ git_prompt_info() {
 
   ref=$(git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(git rev-parse --short HEAD 2> /dev/null) || return
-  echo " %{$fg_bold[magenta]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
+  echo "%{$fg_bold[magenta]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
 }
 
 local dir_info="%{$fg[cyan]%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
 local promptnormal="%{$fg_bold[green]%}%(!.*→.→) %{$reset_color%}"
 local promptjobs="%{$fg_bold[yellow]%}%(!.*→.→) %{$reset_color%}"
 
-PROMPT='${dir_info}$(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
+function prompt_host() {
+  if [[ -n $SSH_CONNECTION ]]; then
+    echo "%{$fg_bold[yellow]%}%n@%m%{$reset_color%}"
+  fi
+}
+
+
+PROMPT='$(prompt_host) ${dir_info} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 
 # zprof
