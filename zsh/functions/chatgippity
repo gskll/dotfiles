@@ -1,0 +1,23 @@
+function chatgippity() {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: chatgippity <extension>"
+        return 1
+    fi
+    local file_extension=$1
+    local temp_file=$(mktemp)
+
+
+    # Use -print0 with find and read with -d $"\0" to handle filenames with special characters
+    find . -not -path "*/.*" -type f -name "*.${file_extension}" -print0 | while IFS= read -r -d $'\0' file; do
+        # Here basename is used, but you might want the relative path instead
+        echo "File: $file" >> $temp_file
+        echo "" >> $temp_file
+        cat "$file" >> $temp_file
+        echo "" >> $temp_file
+        echo "----------------" >> $temp_file
+        echo "" >> $temp_file
+    done
+
+    # Output the path of the temp file
+    cat $temp_file
+}

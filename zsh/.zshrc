@@ -14,7 +14,7 @@ fi
 
 local CONFIG="$HOME/dotfiles/zsh"
 fpath=($CONFIG/functions $fpath)
-autoload chpwd switch_color_scheme
+autoload chpwd switch_color_scheme chatgippity
 
 #################
 #### HISTORY ####
