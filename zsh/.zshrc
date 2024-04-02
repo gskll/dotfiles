@@ -123,6 +123,7 @@ autoload chpwd switch_color_scheme
 
 . ~/dotfiles/zsh/zsh-z/zsh-z.plugin.zsh
 
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 . ~/.asdf/plugins/golang/set-env.zsh
 
