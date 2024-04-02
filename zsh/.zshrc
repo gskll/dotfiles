@@ -155,17 +155,20 @@ git_prompt_info() {
   echo "%{$fg_bold[magenta]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
 }
 
-local dir_info="%{$fg[cyan]%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
-local promptnormal="%{$fg_bold[green]%}%(!.*→.→) %{$reset_color%}"
-local promptjobs="%{$fg_bold[yellow]%}%(!.*→.→) %{$reset_color%}"
-
-function prompt_host() {
-  if [[ -n $SSH_CONNECTION ]]; then
-    echo "%{$fg_bold[yellow]%}%n@%m%{$reset_color%}"
-  fi
+hostname_prompt_info() {
+    if [[ -n $SSH_CONNECTION ]]; then
+        echo "%{$fg_bold[yellow]%}%n@%m%{$reset_color%}"
+    fi
 }
 
+local dir_info="%{$fg[cyan]%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
+local promptsymbol="%(!.*→.→) %{$reset_color%}"
+local promptnormal="%{$fg_bold[green]%}$promptsymbol"
+local promptfail="%{$fg_bold[red]%}$promptsymbol"
 
-PROMPT='$(prompt_host) ${dir_info} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
+local promptnojobs="%(?.$promptnormal.$promptfail)"
+local promptjobs="%{$fg_bold[yellow]%}$promptsymbol"
+
+PROMPT='$(hostname_prompt_info) ${dir_info} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 
 # zprof
