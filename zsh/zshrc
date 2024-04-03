@@ -6,6 +6,7 @@
 typeset -U PATH
 autoload colors; colors
 export LANG=en_US.UTF-8
+setopt autocd
 
 local private="${HOME}/.profile.zsh"
 if [ -e ${private} ]; then
@@ -34,7 +35,7 @@ unsetopt HIST_VERIFY          # Execute commands using history (e.g.: using !$) 
 #################
 ## COMPLETION ###
 #################
-#
+
 # Add completions installed through Homebrew packages
 # See: https://docs.brew.sh/Shell-Completion
 if type brew &>/dev/null; then
