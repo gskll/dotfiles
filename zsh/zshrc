@@ -177,6 +177,7 @@ local promptfail="%{$fg_bold[red]%}$promptsymbol"
 local promptnojobs="%(?.$promptnormal.$promptfail)"
 local promptjobs="%{$fg_bold[yellow]%}$promptsymbol"
 
-PROMPT='$(hostname_prompt_info) ${dir_info} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
+NEWLINE=$'\n'
+PROMPT='${NEWLINE}$(hostname_prompt_info) ${dir_info} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 
 # zprof
