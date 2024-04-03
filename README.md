@@ -12,20 +12,18 @@
 1. setup karabiner elements - import `dotfiles/karabiner-elements/karabiner.json`
 
 1. set zsh to default `chsh -s $(which zsh)`
+1. create symlinks: `make all`
 1. install [ohmyzsh](https://ohmyz.sh/#install)
 
    - `touch ~/.profile.zsh`
-   - `ln -s ~/dotfiles/zsh/.zshrc ~`
 
 1. setup tmux config
 
-   - `ln -s ~/dotfiles/tmux/tmux.conf  ~/.tmux.conf`
    - `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
    - Enter tmux and hit `prefix + I` (`ctrl+a + I`) to install plugins
 
 1. setup neovim
 
-   - `ln -s ~/dotfiles/nvim/ ~/.config/`
    - open neovim and Lazy should run automatically
 
 1. setup asdf
