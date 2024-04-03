@@ -1,7 +1,3 @@
-alias vi="nvim"
-alias vim="nvim"
-
-
 alias history='history 1'
 alias hs='history | grep '
 
@@ -12,9 +8,9 @@ alias sz='source ~/.zshrc'
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
-alias l="ls -1p"
-alias ll="ls -lrth"
-alias la="ls -lrtha"
+alias l="ls -1p -G"
+alias ll="ls -lrth -G"
+alias la="ls -lrtha -G"
 
 alias ,,="cd -"
 

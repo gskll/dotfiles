@@ -12,10 +12,6 @@ if [ -e ${private} ]; then
   . ${private}
 fi
 
-local CONFIG="$HOME/dotfiles/zsh"
-fpath=($CONFIG/functions $fpath)
-autoload chpwd switch_color_scheme chatgippity
-
 #################
 #### HISTORY ####
 #################
@@ -97,13 +93,18 @@ bindkey '^[[3~' delete-char
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 
-# Where should I put you?
-bindkey -s '^F' "tmux-sessionizer\n"
+if type tmux-sessionizer &> /dev/null; then
+    bindkey -s '^F' "tmux-sessionizer\n"
+fi
 
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+if type nvim &> /dev/null; then
+    alias vi="nvim"
+    alias vim='nvim'
+    export EDITOR='nvim'
+    export GIT_EDITOR='nvim'
 else
-  export EDITOR='nvim'
+    export EDITOR="vim"
+    export GIT_EDITOR="vim"
 fi
 
 #################
@@ -112,7 +113,7 @@ fi
 
 local CONFIG="$HOME/dotfiles/zsh"
 fpath=($CONFIG/functions $fpath)
-autoload chpwd switch_color_scheme
+autoload chpwd switch_color_scheme chatgippity
 
 #################
 #### PLUGINS ####
@@ -126,6 +127,12 @@ autoload chpwd switch_color_scheme
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 . ~/.asdf/plugins/golang/set-env.zsh
+
+#################
+##### PATH ######
+#################
+
+export PATH="$HOME/bin:$PATH"
 
 #################
 #### ALIASES ####
