@@ -1,0 +1,9 @@
+.DS_Store
+tags
+.env
+.envrc
+.mypy_cache
+__py_cache__
+.tool-versions
+.idea
+
