@@ -33,7 +33,7 @@ style = "Italic"
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
-style = "Regular"
+style = "Light"
 
 [cursor]
 style = { shape= "Block", blinking= "Off"}
