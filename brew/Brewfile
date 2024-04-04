@@ -55,6 +55,7 @@ brew "tree"
 brew "wget"
 brew "yt-dlp"
 brew "1password-cli"
+brew "fzf"
 
 cash "appcleaner"
 cask "firefox"
