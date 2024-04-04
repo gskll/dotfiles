@@ -206,14 +206,42 @@ return {
 				"Select harpoon list item 1",
 			},
 			{
-				"<C-S-P>",
+				"<leader>2",
+				function()
+					require("harpoon"):list():select(2)
+				end,
+				"Select harpoon list item 2",
+			},
+			{
+				"<leader>3",
+				function()
+					require("harpoon"):list():select(3)
+				end,
+				"Select harpoon list item 3",
+			},
+			{
+				"<leader>4",
+				function()
+					require("harpoon"):list():select(4)
+				end,
+				"Select harpoon list item 4",
+			},
+			{
+				"<leader>5",
+				function()
+					require("harpoon"):list():select(5)
+				end,
+				"Select harpoon list item 5",
+			},
+			{
+				"[h",
 				function()
 					require("harpoon"):list():prev()
 				end,
 				"Previous harpoon list buffer",
 			},
 			{
-				"<C-S-N",
+				"]h",
 				function()
 					require("harpoon"):list():next()
 				end,
