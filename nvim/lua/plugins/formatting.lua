@@ -33,11 +33,12 @@ return {
 				python = { "black" },
 				javascript = { { "prettierd", "prettier" } },
 				sh = { "shfmt" },
-				go = { "goimports", "gofumpt", "golines" },
+				go = { "goimports-reviser", "gofumpt", "golines" },
 				markdown = { { "prettierd", "prettier" } },
 			},
 			formatters = {
 				injected = { options = { ignore_errors = false } },
+				golines = { prepend_args = { "-m", "120", "-t", "1" } },
 			},
 		},
 	},
