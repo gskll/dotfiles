@@ -78,6 +78,7 @@ return {
 			"stylua",
 			"json-to-struct",
 			"gofumpt",
+			"goimports-reviser",
 			"golines",
 			"gotests",
 			"golangci-lint",
