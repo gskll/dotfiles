@@ -1,5 +1,4 @@
-alias history='history 1'
-alias hs='history | grep '
+alias hs='history 1 | grep '
 
 # Edit/Source vim config
 alias ez='vi ~/.zshrc'
