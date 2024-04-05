@@ -7,6 +7,7 @@ typeset -U PATH
 autoload colors; colors
 export LANG=en_US.UTF-8
 setopt autocd
+export REPORTTIME=3
 
 local private="${HOME}/.profile.zsh"
 if [ -e ${private} ]; then
