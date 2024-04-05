@@ -169,7 +169,9 @@ hostname_prompt_info() {
     fi
 }
 
-local dir_info="%{$fg[cyan]%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
+# local dir_info="%{$fg[cyan]%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
+local dir_info="%{$fg[cyan]%}%(4~|/%1~|%4~)%{$reset_color%}"
+
 local promptsymbol="%(!.*→.→) %{$reset_color%}"
 local promptnormal="%{$fg_bold[green]%}$promptsymbol"
 local promptfail="%{$fg_bold[red]%}$promptsymbol"
