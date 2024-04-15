@@ -1,6 +1,13 @@
 [user]
-  name = Andrew Gaskell
-  email = gskll@protonmail.com
+  name = sp-andrew-gaskell
+  email = andrew.gaskell@socialpoint.es
+
+[includeIf "gitdir:~/dotfiles/"]
+    path = ~/.personal.gitconfig
+
+[includeIf "gitdir:~/misc/"]
+    path = ~/.personal.gitconfig
+
 
 [alias]
   co = checkout
@@ -50,3 +57,15 @@
 	rebase = true
 [protocol "file"]
 	allow = always
+
+[include]
+    path = "~/.private.gitconfig"
+
+[url "https://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@github.com/"]
+	insteadOf = https://github.com/
+[url "https://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:x-oauth-basic@github.com"]
+	insteadOf = https://github.com
+	insteadOf = git@github.com
+[url "https://:x-oauth-basic@github.com"]
+	insteadOf = https://github.com
+	insteadOf = git@github.com
