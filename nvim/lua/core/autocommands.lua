@@ -40,8 +40,8 @@ autocmd({ "BufLeave", "FocusLost", "InsertEnter", "CmdlineEnter", "WinLeave" }, 
 	end,
 })
 
-local startupGroup = augroup("startup", { clear = true })
-autocmd("VimEnter", { group = startupGroup, pattern = "*", command = "Ex" })
+-- local startupGroup = augroup("startup", { clear = true })
+-- autocmd("VimEnter", { group = startupGroup, pattern = "*", command = "Oil" })
 
 local colorGroup = augroup("colorscheme", { clear = true })
 autocmd("BufWritePost", {

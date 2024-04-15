@@ -1,5 +1,16 @@
 return {
-	{ "tpope/vim-vinegar", lazy = false, priority = 1000 },
+	{
+		"stevearc/oil.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		lazy = false,
+		priority = 1000,
+		keys = { { "-", "<cmd>Oil<cr>", desc = "Oil: open parent dir" } },
+		opts = {
+			default_file_explorer = true,
+			delete_to_trash = true,
+		},
+		config = true,
+	},
 
 	{
 		"nvim-telescope/telescope.nvim",
