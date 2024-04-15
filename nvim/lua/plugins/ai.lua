@@ -13,6 +13,13 @@ return {
 		},
 		config = function()
 			require("chatgpt").setup({
+				popup_window = {
+					border = {
+						text = {
+							top = " ? ",
+						},
+					},
+				},
 				api_key_cmd = "op read op://private/openai-key/credential --no-newline",
 				openai_params = {
 					model = "gpt-4-turbo-preview",
