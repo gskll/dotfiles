@@ -8,6 +8,19 @@ return {
 		opts = {
 			default_file_explorer = true,
 			delete_to_trash = true,
+			keymaps = {
+				["<C-p>"] = false,
+				["<C-l>"] = false,
+				["<C-h>"] = false,
+				["gx"] = false,
+				["<C-f>"] = "actions.preview",
+				["<C-r>"] = "actions.refresh",
+				["<C-\\>"] = "actions.select_vsplit",
+				["<C-->"] = "actions.select_split",
+			},
+			view_options = {
+				show_hidden = true,
+			},
 		},
 		config = true,
 	},
