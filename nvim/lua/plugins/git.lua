@@ -87,6 +87,7 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		cmd = "Octo",
-		keys = { "<leader>O", '<cmd>Octo "', "Populate command line with Octo" },
+		keys = { { "<leader>O", ':Octo "', "Populate command line with Octo" } },
+		config = true,
 	},
 }
