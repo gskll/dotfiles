@@ -44,7 +44,7 @@ autocmd({ "BufLeave", "FocusLost", "InsertEnter", "CmdlineEnter", "WinLeave" }, 
 -- autocmd("VimEnter", { group = startupGroup, pattern = "*", command = "Oil" })
 
 local colorGroup = augroup("colorscheme", { clear = true })
-autocmd("BufWritePost", {
+autocmd({"BufWritePost", "FileChangedShellPost"}, {
 	group = colorGroup,
 	pattern = "~/dotfiles/nvim-lazy/lua/core/colors.lua",
 	callback = function()
