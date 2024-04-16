@@ -209,7 +209,7 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
         -- stylua: ignore
 		keys = {
-			{ "<leader>a", function() require("harpoon"):list():append() end, "Append to harpoon list" },
+			{ "<leader>a", function() require("harpoon"):list():add() end, "Append to harpoon list" },
 			{ "<C-e>", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end, "Toggle harpoon popup" },
 			{ "<leader>1", function() require("harpoon"):list():select(1) end, "Select harpoon list item 1" },
 			{ "<leader>2", function() require("harpoon"):list():select(2) end, "Select harpoon list item 2" },
