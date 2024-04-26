@@ -32,6 +32,7 @@ return {
 				lua = { "stylua" },
 				python = { "black" },
 				javascript = { { "prettierd", "prettier" } },
+				typescript = { { "prettierd", "prettier" } },
 				sh = { "shfmt" },
 				go = { "goimports-reviser", "gofumpt", "golines" },
 				markdown = { { "prettierd", "prettier" } },
