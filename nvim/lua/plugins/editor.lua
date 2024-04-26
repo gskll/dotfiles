@@ -1,4 +1,5 @@
 return {
+	{ "tpope/vim-sleuth", event = "VeryLazy" },
 	{
 		"stevearc/oil.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
