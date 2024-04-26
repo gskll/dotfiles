@@ -2,7 +2,7 @@ M = {}
 
 -- this should be changed through the command line to keep tmux/alacritty in sync
 -- see zsh function `switch_color_scheme`
-M.active = "tokyolight"
+M.active = "tokyonight"
 
 function M.gruvbox()
 	print("Setting colorscheme to gruvbox", "Normal")
