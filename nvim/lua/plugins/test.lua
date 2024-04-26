@@ -56,6 +56,8 @@ return {
 			{ "<leader>tu", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Neotest: Show Output" },
 			{ "<leader>tU", function() require("neotest").output_panel.toggle() end, desc = "Neotest: Toggle Output Panel" },
 			{ "<leader>tS", function() require("neotest").run.stop() end, desc = "Neotest: Stop" },
+            {"[n", function() require("neotest").jump.prev({status="failed"}) end, desc="Neotest: go to prev failed test"},
+            {"]n", function() require("neotest").jump.next({status="failed"}) end, desc="Neotest: go to next failed test"}
 		},
 	},
 }
