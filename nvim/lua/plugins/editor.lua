@@ -93,6 +93,11 @@ return {
 
 			-- search
 			{ "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Telescope live_grep" } },
+			{
+				"<leader>fG",
+				"<cmd>Telescope grep_string<cr>",
+				{ desc = "Telescope grep string under cursor or selection" },
+			},
 			{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Telescope help tags" },
 			{ '<leader>fR"', "<cmd>Telescope registers<cr>", desc = "Registers" },
 			{ "<leader>fc", "<cmd>Telescope command_history<cr>", desc = "Command History" },
