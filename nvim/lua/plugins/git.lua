@@ -14,6 +14,14 @@ return {
 	},
 
 	{
+		"tpope/vim-rhubarb",
+		cmd = "Gbrowse",
+		keys = {
+			{ "<leader>GB", "<cmd>GBrowse<cr>", "Open in github" },
+		},
+	},
+
+	{
 		"lewis6991/gitsigns.nvim",
 		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 		opts = {
