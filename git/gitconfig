@@ -61,11 +61,9 @@
 [include]
     path = "~/.private.gitconfig"
 
-[url "https://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@github.com/"]
-	insteadOf = https://github.com/
-[url "https://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:x-oauth-basic@github.com"]
-	insteadOf = https://github.com
-	insteadOf = git@github.com
-[url "https://:x-oauth-basic@github.com"]
-	insteadOf = https://github.com
-	insteadOf = git@github.com
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+
