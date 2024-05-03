@@ -11,6 +11,7 @@ return {
 				enabled = true,
 				opts = { mode = "cursor", max_lines = 3 },
 			},
+			{ "windwp/nvim-ts-autotag" },
 		},
 		config = function()
 			require("nvim-treesitter.configs").setup({
