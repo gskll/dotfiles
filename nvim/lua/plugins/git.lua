@@ -14,10 +14,12 @@ return {
 	},
 
 	{
-		"tpope/vim-rhubarb",
-		cmd = "Gbrowse",
+		"Almo7aya/openingh.nvim",
+		cmd = { "OpenInGHRepo", "OpenInGHFile", "OpenInGHFileLines" },
 		keys = {
-			{ "<leader>GB", "<cmd>GBrowse<cr>", "Open in github" },
+			{ "<leader>GR", "<cmd>OpenInGHRepo<cr>", "Open repo in github" },
+			{ "<leader>GF", "<cmd>OpenInGHFile<cr>", "Open file in github" },
+			{ "<leader>GL", "<cmd>OpenInGHFileLines<cr>", "Open file lines in github" },
 		},
 	},
 
