@@ -1,4 +1,5 @@
 return {
+	{ "tpope/vim-sleuth", event = "VeryLazy" },
 	{
 		"stevearc/oil.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -8,6 +9,19 @@ return {
 		opts = {
 			default_file_explorer = true,
 			delete_to_trash = true,
+			keymaps = {
+				["<C-p>"] = false,
+				["<C-l>"] = false,
+				["<C-h>"] = false,
+				["gx"] = false,
+				["<C-f>"] = "actions.preview",
+				["<C-r>"] = "actions.refresh",
+				["<C-\\>"] = "actions.select_vsplit",
+				["<C-->"] = "actions.select_split",
+			},
+			view_options = {
+				show_hidden = true,
+			},
 		},
 		config = true,
 	},
@@ -79,6 +93,11 @@ return {
 
 			-- search
 			{ "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Telescope live_grep" } },
+			{
+				"<leader>fG",
+				"<cmd>Telescope grep_string<cr>",
+				{ desc = "Telescope grep string under cursor or selection" },
+			},
 			{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Telescope help tags" },
 			{ '<leader>fR"', "<cmd>Telescope registers<cr>", desc = "Registers" },
 			{ "<leader>fc", "<cmd>Telescope command_history<cr>", desc = "Command History" },
@@ -130,8 +149,8 @@ return {
 		keys = {
 			{ "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
 			{ "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
-			{ "<leader>xL", "<cmd>TroubleToggle loclist<cr>", desc = "Location List (Trouble)" },
-			{ "<leader>xQ", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
+			{ "<leader>xl", "<cmd>TroubleToggle loclist<cr>", desc = "Location List (Trouble)" },
+			{ "<leader>xc", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
 			{
 				"[q",
 				function()
@@ -196,7 +215,7 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
         -- stylua: ignore
 		keys = {
-			{ "<leader>a", function() require("harpoon"):list():append() end, "Append to harpoon list" },
+			{ "<leader>a", function() require("harpoon"):list():add() end, "Append to harpoon list" },
 			{ "<C-e>", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end, "Toggle harpoon popup" },
 			{ "<leader>1", function() require("harpoon"):list():select(1) end, "Select harpoon list item 1" },
 			{ "<leader>2", function() require("harpoon"):list():select(2) end, "Select harpoon list item 2" },

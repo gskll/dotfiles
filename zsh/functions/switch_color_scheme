@@ -6,6 +6,7 @@ function switch_color_scheme() {
         [1]="gruvbox"
         [2]="tokyonight"
         [3]="kanagawa"
+        [4]="tokyolight"
     )
 
     color_scheme=${color_schemes_map[$color_scheme_id]}

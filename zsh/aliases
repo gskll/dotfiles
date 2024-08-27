@@ -28,6 +28,7 @@ alias glf="git --no-pager log --oneline -n 5"
 alias gp="git push"
 alias gpl="git pull"
 alias gpr="git pull --rebase"
+alias gt="git stash"
 
 alias gd="git diff"
 alias gdc='git diff --cached'
@@ -40,6 +41,11 @@ alias gup="git push -u origin HEAD"
 
 alias gre='git rebase'
 alias cdr='cd $(git rev-parse --show-toplevel)' # cd to git Root
+
+alias dk='docker'
+alias dkc='docker-compose'
+alias dka='docker-compose up -d'
+alias dkd='docker-compose down'
 
 # ceedee dot dot dot
 alias -g ...='../..'

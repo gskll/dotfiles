@@ -31,10 +31,16 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "black" },
-				javascript = { { "prettierd", "prettier" } },
 				sh = { "shfmt" },
 				go = { "goimports-reviser", "gofumpt", "golines" },
+
+				javascript = { { "prettierd", "prettier" } },
+				typescript = { { "prettierd", "prettier" } },
 				markdown = { { "prettierd", "prettier" } },
+				html = { { "prettierd", "prettier" } },
+				css = { { "prettierd", "prettier" } },
+				scss = { { "prettierd", "prettier" } },
+				json = { { "prettierd", "prettier" } },
 			},
 			formatters = {
 				injected = { options = { ignore_errors = false } },
