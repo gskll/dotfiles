@@ -40,6 +40,7 @@ return {
 				html = { { "prettierd", "prettier" } },
 				css = { { "prettierd", "prettier" } },
 				scss = { { "prettierd", "prettier" } },
+				json = { { "prettierd", "prettier" } },
 			},
 			formatters = {
 				injected = { options = { ignore_errors = false } },
