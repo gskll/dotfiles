@@ -1,6 +1,13 @@
 [user]
-  name = Andrew Gaskell
-  email = gskll@protonmail.com
+  name = sp-andrew-gaskell
+  email = andrew.gaskell@socialpoint.es
+
+[includeIf "gitdir:~/dotfiles/"]
+    path = ~/.personal.gitconfig
+
+[includeIf "gitdir:~/misc/"]
+    path = ~/.personal.gitconfig
+
 
 [alias]
   co = checkout

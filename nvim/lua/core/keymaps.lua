@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-map("i", "jk", "<Esc>", { desc = "Escape insert mode" })
+map({ "i", "v" }, "jk", "<Esc>", { desc = "Escape insert mode" })
 map({ "n", "v" }, "E", "$", { desc = "Remap line end" })
 map({ "n", "v" }, "B", "^", { desc = "Remap line start" })
 

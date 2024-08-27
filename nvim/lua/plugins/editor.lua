@@ -77,8 +77,8 @@ return {
 			-- files
 			{ "<leader><leader>", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
 			{ "<leader>f.", "<cmd>Telescope oldfiles<cr>", desc = "Old files" },
-			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-			{ "<leader>ffh", "<cmd>Telescope find_files hidden=true<cr>", desc = "Find files with hidden" },
+			{ "g/", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+			{ "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", desc = "Find files with hidden" },
 			{ "<c-p>", "<cmd>Telescope git_files<cr>", desc = "Git files" },
 
 			-- misc
@@ -94,12 +94,13 @@ return {
 			-- search
 			{ "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Telescope live_grep" } },
 			{
-				"<leader>fG",
+				"<leader>fs",
 				"<cmd>Telescope grep_string<cr>",
+				mode = { "n", "x" },
 				{ desc = "Telescope grep string under cursor or selection" },
 			},
 			{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Telescope help tags" },
-			{ '<leader>fR"', "<cmd>Telescope registers<cr>", desc = "Registers" },
+			{ "<leader>fR", "<cmd>Telescope registers<cr>", desc = "Registers" },
 			{ "<leader>fc", "<cmd>Telescope command_history<cr>", desc = "Command History" },
 			{ "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
 			{ "<leader>fD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
