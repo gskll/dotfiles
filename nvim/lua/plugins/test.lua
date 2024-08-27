@@ -10,6 +10,7 @@ return {
 			"nvim-neotest/neotest-go",
 			"nvim-neotest/neotest-python",
 			"olimorris/neotest-phpunit",
+			"nvim-neotest/neotest-jest",
 		},
 		config = function()
 			require("neotest").setup({
@@ -21,17 +22,25 @@ return {
 						recursive_run = true,
 						args = { "-count=1", "-timeout=60s" },
 					}),
+					require("neotest-jest")({
+						jestCommand = "npm test --",
+						jestConfigFile = "custom.jest.config.ts",
+						env = { CI = true },
+						cwd = function(path)
+							return vim.fn.getcwd()
+						end,
+					}),
 				},
 				status = { virtual_text = true },
 				output = { open_on_run = true },
 				quickfix = {
-					open = function()
-						if require("lazy.plugins.trouble") ~= nil then
-							require("trouble").open({ mode = "quickfix", focus = false })
-						else
-							vim.cmd("copen")
-						end
-					end,
+					-- open = function()
+					-- 	if require("lazy.plugins.trouble") ~= nil then
+					-- 		require("trouble").open({ mode = "quickfix", focus = false })
+					-- 	else
+					-- 		vim.cmd("copen")
+					-- 	end
+					-- end,
 				},
 			})
 			local neotest_ns = vim.api.nvim_create_namespace("neotest")
