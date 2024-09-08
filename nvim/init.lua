@@ -17,5 +17,3 @@ require("lazy").setup("plugins", lazy_config)
 
 local active_color_scheme = require("core.colors").active
 require("core.colors")[active_color_scheme]()
-
-vim.cmd("Copilot disable")

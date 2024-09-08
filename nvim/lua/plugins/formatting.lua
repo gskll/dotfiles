@@ -23,7 +23,8 @@ return {
 			},
 		},
 		opts = {
-			notify_on_error = false,
+			log_level = vim.log.levels.DEBUG,
+			notify_on_error = true,
 			format_on_save = {
 				timeout_ms = 500,
 				lsp_fallback = true,
@@ -34,12 +35,13 @@ return {
 				sh = { "shfmt" },
 				go = { "goimports-reviser", "gofumpt", "golines" },
 
-				javascript = { { "prettierd", "prettier" } },
-				typescript = { { "prettierd", "prettier" } },
-				markdown = { { "prettierd", "prettier" } },
-				html = { { "prettierd", "prettier" } },
-				css = { { "prettierd", "prettier" } },
-				scss = { { "prettierd", "prettier" } },
+				javascript = { "prettierd", "prettier" },
+				typescript = { "prettierd", "prettier" },
+				json = { "prettierd", "prettier" },
+				markdown = { "prettierd", "prettier" },
+				html = { "prettierd", "prettier" },
+				css = { "prettierd", "prettier" },
+				scss = { "prettierd", "prettier" },
 			},
 			formatters = {
 				injected = { options = { ignore_errors = false } },

@@ -115,7 +115,7 @@ fi
 
 local CONFIG="$HOME/dotfiles/zsh"
 fpath=($CONFIG/functions $fpath)
-autoload chpwd switch_color_scheme chatgippity
+autoload chpwd switch_color_scheme chatgippity git_clone_bare get_multifile_prompt
 
 #################
 #### PLUGINS ####

@@ -25,13 +25,20 @@ return {
 				status = { virtual_text = true },
 				output = { open_on_run = true },
 				quickfix = {
-					open = function()
-						if require("lazy.plugins.trouble") ~= nil then
-							require("trouble").open({ mode = "quickfix", focus = false })
-						else
-							vim.cmd("copen")
-						end
-					end,
+					enable = true,
+					open = true,
+					-- open = vim.cmd("copen")
+
+					-- open = vim.cmd("Trouble quickfix")
+
+					-- Option 1 : doesn't work
+					-- open = function()
+					-- 	if require("lazy.plugins.trouble") ~= nil then
+					-- 		require("trouble").open({ mode = "quickfix", focus = false })
+					-- 	else
+					-- 		vim.cmd("copen")
+					-- 	end
+					-- end,
 				},
 			})
 			local neotest_ns = vim.api.nvim_create_namespace("neotest")
