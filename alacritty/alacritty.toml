@@ -1,4 +1,4 @@
-import = [ "~/dotfiles/alacritty/colors/tokyonight.toml" ]
+import = [ "~/dotfiles/alacritty/colors/gruvbox.toml" ]
 live_config_reload = true
 
 [shell]
