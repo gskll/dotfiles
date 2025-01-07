@@ -22,9 +22,14 @@ neovim:
 	ln -sf $(DOTFILES)/nvim $(HOME)/.config
 .PHONY: neovim
 
+ghostty:
+	mkdir -p $(HOME)/.config
+	ln -sf $(DOTFILES)/ghostty $(HOME)/.config
+.PHONY: ghostty
+
 alacritty:
 	mkdir -p $(HOME)/.config
 	ln -sf $(DOTFILES)/alacritty $(HOME)/.config
 .PHONY: alacritty
 
-all: git zsh tmux neovim alacritty
+all: git zsh tmux neovim ghostty
