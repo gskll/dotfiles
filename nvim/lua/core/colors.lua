@@ -2,12 +2,11 @@ M = {}
 
 -- this should be changed through the command line to keep tmux/alacritty in sync
 -- see zsh function `switch_color_scheme`
-M.active = "tokyonight"
+M.active = "gruvbox"
 
 function M.gruvbox()
-	print("Setting colorscheme to gruvbox", "Normal")
-	vim.cmd.colorscheme("gruvbox")
 	vim.opt.background = "dark"
+	vim.cmd.colorscheme("gruvbox-material")
 
 	-- disable typescript interface semantic highlighting
 	-- clash between treesitter and lsp semantic highlighting
