@@ -59,7 +59,7 @@ brew "fzf"
 
 cash "appcleaner"
 cask "firefox"
-cask "alacritty"
+cask "ghostty"
 cask "google-chrome"
 cask "flux"
 cask "1password"
