@@ -69,6 +69,13 @@ return {
 					},
 				},
 			},
+			ts_ls = {
+				cmd = {
+					"/Users/andrew.gaskell/.asdf/installs/nodejs/20.15.0/bin/node",
+					"/Users/andrew.gaskell/.local/share/nvim/mason/bin/typescript-language-server",
+					"--stdio",
+				},
+			},
 		}
 
 		require("mason").setup()
