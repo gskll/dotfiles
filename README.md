@@ -9,6 +9,7 @@
 1. install alfred3 from chrome - license key in 1password - https://cachefly.alfredapp.com/Alfred_3.8.6_972.dmg
 
 1. brew install `brew bundle install --file ~/dotfiles/brew/Brewfile`
+1. setup docker completions ` mkdir -p ~/.docker/completions; docker completion zsh > ~/.docker/completions/_docker `
 1. setup karabiner elements - import `dotfiles/karabiner-elements/karabiner.json`
 
 1. set zsh to default `chsh -s $(which zsh)`
