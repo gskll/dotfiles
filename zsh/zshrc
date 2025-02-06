@@ -40,7 +40,7 @@ unsetopt HIST_VERIFY          # Execute commands using history (e.g.: using !$) 
 # Add completions installed through Homebrew packages
 # See: https://docs.brew.sh/Shell-Completion
 if type brew &>/dev/null; then
-  FPATH=/usr/local/share/zsh/site-functions:$FPATH
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
 FPATH="$HOME/.docker/completions:$FPATH"
