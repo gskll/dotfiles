@@ -31,6 +31,7 @@
   sup = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"
 [core]
   excludesfile = ~/.gitignore
+  autocrlf = input
 
 [color]
   diff = auto
@@ -67,3 +68,5 @@
 	required = true
 	clean = git-lfs clean -- %f
 
+[rerere]
+	enabled = true
