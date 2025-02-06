@@ -186,3 +186,5 @@ NEWLINE=$'\n'
 PROMPT='${NEWLINE}$(hostname_prompt_info) ${dir_info} $(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 
 # zprof
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="~/.gem/ruby/3.3.0/bin/:$PATH"
